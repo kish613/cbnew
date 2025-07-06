@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Crestbourne Property Investment</title>
+    <meta name="description" content="Explore Crestbourne's comprehensive property portfolio featuring residential and commercial investments across the UK. View our successful developments and investment opportunities.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                    <img src="assets/images/crestbourne_logo_upscaled.png" alt="Crestbourne Property Investment Company Logo" class="nav__logo-img">
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#about" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#services" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__contact">
+                    <a href="tel:02033715548" class="nav__contact-link">
+                        <i class="ri-phone-line"></i>
+                        0203 371 5548
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <!-- Portfolio Hero -->
+        <section class="portfolio-hero section">
+            <div class="container">
+                <div class="portfolio-hero__content">
+                    <span class="section__subtitle">Our Portfolio</span>
+                    <h1 class="section__title">Comprehensive Property Investment Portfolio</h1>
+                    <p class="portfolio-hero__description">
+                        Discover our diverse collection of residential and commercial properties across the UK. 
+                        Each investment has been carefully selected for its potential to generate sustainable returns 
+                        while contributing positively to local communities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Navigation -->
+        <section class="portfolio-nav section">
+            <div class="container">
+                <div class="portfolio-nav__buttons">
+                    <button class="portfolio-nav__btn portfolio-nav__btn--active" data-filter="all">All Properties</button>
+                    <button class="portfolio-nav__btn" data-filter="residential">Residential</button>
+                    <button class="portfolio-nav__btn" data-filter="commercial">Commercial</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Residential Properties -->
+        <section class="portfolio-section section animated-bg" id="residential">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Residential Properties</span>
+                    <h2 class="section__title">Premium Residential Investments</h2>
+                    <p class="section__description">
+                        Our residential portfolio spans across key UK locations, offering diverse investment 
+                        opportunities from individual properties to large-scale developments.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Spire Portfolio -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_4.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Spire Portfolio</h3>
+                                    <p class="portfolio-item__location">Chesterfield & Mansfield, East Midlands</p>
+                                    <span class="portfolio-item__type">68 Three-Bedroom Houses</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Spire Portfolio</h3>
+                            <p class="portfolio-item__location">Chesterfield & Mansfield, East Midlands</p>
+                            <p class="portfolio-item__description">
+                                68 fully-let three-bedroom houses featuring a mix of traditional and non-traditional 
+                                construction. Each unit is in tenantable condition with excellent local amenities 
+                                and strong transport links.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-home-line"></i>
+                                    68 Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    Freehold
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-check-line"></i>
+                                    Fully Let
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cobbler/Northampton Portfolio -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_5.png" alt="Cobbler Northampton Portfolio - Baker Street Properties" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Cobbler/Northampton Portfolio</h3>
+                                    <p class="portfolio-item__location">Northampton</p>
+                                    <span class="portfolio-item__type">16 Terraced Houses</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Cobbler/Northampton Portfolio</h3>
+                            <p class="portfolio-item__location">Baker Street, Freehold Street, St Paul's Road</p>
+                            <p class="portfolio-item__description">
+                                Freehold collection of 16 terraced houses comprising 66 bedrooms across various unit sizes. 
+                                Located within 1.5 km of train station with strong rental potential and value-add opportunities.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-home-line"></i>
+                                    16 Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-train-line"></i>
+                                    1.5km to Station
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-tools-line"></i>
+                                    Value-Add Opportunity
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newlands Croft -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_6.png" alt="Newlands Croft - Bromley London Development" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Newlands Croft</h3>
+                                    <p class="portfolio-item__location">Bromley, London</p>
+                                    <span class="portfolio-item__type">Block Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Newlands Croft</h3>
+                            <p class="portfolio-item__location">Lennard Rd, London, SE20 7LW</p>
+                            <p class="portfolio-item__description">
+                                Originally built in the 1940s as 16 flats, redeveloped into 12 spacious flats in Bromley, London. 
+                                Purchased with vacant possession and now fully managed in-house by Fast Homes Investments.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-building-line"></i>
+                                    12 Flats
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    London SE20
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-settings-line"></i>
+                                    In-House Management
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commercial Properties -->
+        <section class="portfolio-section section animated-bg-dots" id="commercial">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Commercial Properties</span>
+                    <h2 class="section__title">Strategic Commercial Investments</h2>
+                    <p class="section__description">
+                        Our commercial portfolio features prime retail parades, mixed-use developments, and 
+                        strategic locations across the UK with established national tenants.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Accrington Parade -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_1.png" alt="Accrington Parade - Lancashire Retail Development" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Accrington Parade</h3>
+                                    <p class="portfolio-item__location">Lancashire</p>
+                                    <span class="portfolio-item__type">Retail Parade</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Accrington Parade</h3>
+                            <p class="portfolio-item__location">40-48 Broadway, Accrington, Lancashire, BB5 1EW</p>
+                            <p class="portfolio-item__description">
+                                Comprehensive retail development comprising five retail units and a substation 
+                                in a prime Lancashire location with excellent footfall and accessibility.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-store-line"></i>
+                                    5 Retail Units
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    Prime Location
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-flashlight-line"></i>
+                                    Includes Substation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brown Portfolio -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_1.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Brown Portfolio</h3>
+                                    <p class="portfolio-item__location">South East England</p>
+                                    <span class="portfolio-item__type">Mixed-Use Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Brown Portfolio</h3>
+                            <p class="portfolio-item__location">Various South East Locations</p>
+                            <p class="portfolio-item__description">
+                                Freehold, mixed-use collection of eight properties comprising industrial, leisure, and retail assets. 
+                                Nearly 80% of income secured against national tenants including Tesco, Toolstation, and Stonegate Pub Company.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-building-2-line"></i>
+                                    8 Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-shield-check-line"></i>
+                                    80% National Tenants
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    Freehold
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tower Bridge Quarter -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_3.png" alt="Tower Bridge Quarter - London South Bank Development" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Tower Bridge Quarter</h3>
+                                    <p class="portfolio-item__location">London South Bank</p>
+                                    <span class="portfolio-item__type">Mixed-Use Development</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Tower Bridge Quarter</h3>
+                            <p class="portfolio-item__location">London's South Bank</p>
+                            <p class="portfolio-item__description">
+                                Freehold mixed-use development comprising nine buildings with retail, leisure, and office spaces 
+                                across 39,582 sq ft. Prime location near Tower Bridge and The Shard with established tenants 
+                                including Brewdog, Foxtons, and Chestertons.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-building-3-line"></i>
+                                    39,582 sq ft
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-train-line"></i>
+                                    Prime Transport Links
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-star-line"></i>
+                                    Iconic Location
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cheltenham Parade -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_2.png" alt="Cheltenham Parade - Town Centre Retail" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Cheltenham Parade</h3>
+                                    <p class="portfolio-item__location">Cheltenham</p>
+                                    <span class="portfolio-item__type">Retail & Office</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Cheltenham Parade</h3>
+                            <p class="portfolio-item__location">Central Cheltenham</p>
+                            <p class="portfolio-item__description">
+                                Extensive 11 unit Town Centre retail parade with office upper floors in a popular 
+                                trading location in central Cheltenham with excellent footfall and visibility.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-store-2-line"></i>
+                                    11 Retail Units
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-building-line"></i>
+                                    Office Upper Floors
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    Town Centre
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eastbourne Parade -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_2.png" alt="Eastbourne Parade - Multi-Level Retail" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Eastbourne Parade</h3>
+                                    <p class="portfolio-item__location">Eastbourne</p>
+                                    <span class="portfolio-item__type">Multi-Level Retail</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Eastbourne Parade</h3>
+                            <p class="portfolio-item__location">Eastbourne</p>
+                            <p class="portfolio-item__description">
+                                Attractive mid-terraced retail parade of seven units arranged over basement, ground, 
+                                first and second floors totalling 36,508 sq ft of retail accommodation.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-store-3-line"></i>
+                                    7 Retail Units
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-building-4-line"></i>
+                                    36,508 sq ft
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-stack-line"></i>
+                                    Multi-Level
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Southport Parade -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-item__image">
+                            <img src="assets/images/page_3.png" alt="Southport Parade - Grade II Listed Building" loading="lazy">
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Southport Parade</h3>
+                                    <p class="portfolio-item__location">Southport</p>
+                                    <span class="portfolio-item__type">Grade II Listed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Southport Parade</h3>
+                            <p class="portfolio-item__location">Lord Street near Nevill Street, Southport</p>
+                            <p class="portfolio-item__description">
+                                Grade II listed building in a prime spot on Lord Street, surrounded by major retailers 
+                                including Caffe Nero, HSBC, and Prezzo in this prestigious shopping destination.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-ancient-gate-line"></i>
+                                    Grade II Listed
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-store-line"></i>
+                                    Prime Retail Location
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-star-line"></i>
+                                    Lord Street
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="portfolio-cta section animated-bg-lines">
+            <div class="container">
+                <div class="portfolio-cta__content">
+                    <h2 class="portfolio-cta__title">Interested in Our Portfolio?</h2>
+                    <p class="portfolio-cta__description">
+                        Discover investment opportunities and learn more about our comprehensive property portfolio. 
+                        Contact our team for detailed information and investment guidance.
+                    </p>
+                    <div class="portfolio-cta__buttons">
+                        <a href="index.html#contact" class="btn btn--primary">
+                            Get In Touch
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <a href="tel:02033715548" class="btn btn--secondary">
+                            <i class="ri-phone-line"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__data">
+                    <div class="footer__info">
+                        <div class="footer__logo">
+                            <img src="assets/images/crestbourne_original_logo.png" alt="Crestbourne" class="footer__logo-img">
+                        </div>
+                        <p class="footer__description">
+                            Expert property development and investment solutions delivering sustainable returns across the UK property market.
+                        </p>
+                    </div>
+
+                    <div class="footer__group">
+                        <div class="footer__links">
+                            <h3 class="footer__title">Quick Links</h3>
+                            <ul class="footer__list">
+                                <li><a href="index.html" class="footer__link">Home</a></li>
+                                <li><a href="index.html#about" class="footer__link">About Us</a></li>
+                                <li><a href="portfolio.html" class="footer__link">Portfolio</a></li>
+                                <li><a href="index.html#services" class="footer__link">Services</a></li>
+                                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__contact">
+                            <h3 class="footer__title">Contact Info</h3>
+                            <div class="footer__contact-info">
+                                <div class="footer__contact-item">
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>34 Hillcrest Avenue<br>London NW11 0EN</span>
+                                </div>
+                                <div class="footer__contact-item">
+                                    <i class="ri-phone-line"></i>
+                                    <a href="tel:02033715548">0203 371 5548</a>
+                                </div>
+                                <div class="footer__contact-item">
+                                    <i class="ri-mail-line"></i>
+                                    <a href="mailto:info@crestbourne.co.uk">info@crestbourne.co.uk</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <p class="footer__copy">
+                        &copy; 2024 Crestbourne Property Investment. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Portfolio filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-nav__btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const portfolioSections = document.querySelectorAll('.portfolio-section');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('portfolio-nav__btn--active'));
+                    this.classList.add('portfolio-nav__btn--active');
+                    
+                    // Show/hide sections and items based on filter
+                    if (filter === 'all') {
+                        portfolioSections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                        portfolioItems.forEach(item => {
+                            item.style.display = 'block';
+                        });
+                    } else if (filter === 'residential') {
+                        portfolioSections.forEach(section => {
+                            if (section.id === 'residential') {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    } else if (filter === 'commercial') {
+                        portfolioSections.forEach(section => {
+                            if (section.id === 'commercial') {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

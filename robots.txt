@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://crestbourne.co.uk/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
