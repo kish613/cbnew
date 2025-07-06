@@ -170,6 +170,8 @@ button {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /*=============== BUTTONS ===============*/
@@ -470,6 +472,8 @@ button {
   margin-bottom: var(--mb-1-5);
   color: var(--text-color-light);
   line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about__features {
@@ -504,6 +508,8 @@ button {
 .feature__description {
   color: var(--text-color-light);
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about__image {
@@ -1730,6 +1736,8 @@ button {
   line-height: 1.5;
   margin-bottom: 1rem;
   font-size: var(--small-font-size);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .featured__stats {
