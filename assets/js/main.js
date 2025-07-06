@@ -249,6 +249,83 @@ portfolioCards.forEach(card => {
 /*=============== SERVICE CARDS STAGGER ANIMATION ===============*/
 const serviceCards = document.querySelectorAll('.service__card');
 
+/*=============== FEATURED PROJECTS IMAGE SLIDER ===============*/
+class FeaturedSlider {
+    constructor(container) {
+        this.container = container;
+        this.slides = container.querySelectorAll('.featured__image-slide');
+        this.indicators = container.querySelectorAll('.featured__indicator');
+        this.prevBtn = container.querySelector('.featured__nav-prev');
+        this.nextBtn = container.querySelector('.featured__nav-next');
+        this.currentSlide = 0;
+        this.autoSlideInterval = null;
+        
+        this.init();
+    }
+    
+    init() {
+        // Add event listeners
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Add indicator click events
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Start auto-slide
+        this.startAutoSlide();
+        
+        // Pause auto-slide on hover
+        this.container.addEventListener('mouseenter', () => this.stopAutoSlide());
+        this.container.addEventListener('mouseleave', () => this.startAutoSlide());
+    }
+    
+    goToSlide(index) {
+        // Remove active class from current slide and indicator
+        this.slides[this.currentSlide].classList.remove('active');
+        this.indicators[this.currentSlide].classList.remove('active');
+        
+        // Set new current slide
+        this.currentSlide = index;
+        
+        // Add active class to new slide and indicator
+        this.slides[this.currentSlide].classList.add('active');
+        this.indicators[this.currentSlide].classList.add('active');
+    }
+    
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+        this.goToSlide(nextIndex);
+    }
+    
+    prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        this.goToSlide(prevIndex);
+    }
+    
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+        }, 4000); // Change slide every 4 seconds
+    }
+    
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+        }
+    }
+}
+
+// Initialize sliders when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const featuredItems = document.querySelectorAll('.featured__item');
+    featuredItems.forEach(item => {
+        new FeaturedSlider(item);
+    });
+});
+
 const serviceObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
