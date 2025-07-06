@@ -363,9 +363,11 @@ button {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2rem;
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 800px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  top: 3rem;
 }
 
 .home__title {

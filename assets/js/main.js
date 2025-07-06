@@ -268,31 +268,7 @@ serviceCards.forEach(card => {
 });
 
 /*=============== TYPING EFFECT FOR HERO TITLE ===============*/
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing effect on load
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.home__title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
-    }
-});
+// Removed typing animation - displaying text normally now
 
 /*=============== MOUSE CURSOR EFFECT ===============*/
 document.addEventListener('mousemove', (e) => {
