@@ -23,7 +23,6 @@ if(navClose){
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
@@ -423,7 +422,6 @@ function hideValidationMessage(input) {
 
 /*=============== MOBILE MENU IMPROVEMENTS ===============*/
 const navToggleBtn = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
 
 if (navToggleBtn && navMenu) {
     navToggleBtn.addEventListener('click', () => {
@@ -483,26 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // New logo animation script
-    const logoParts = document.querySelectorAll('.logo-text .crest, .logo-text .bourne');
-    let totalDelay = 0;
-
-    logoParts.forEach(part => {
-        const text = part.textContent;
-        if (part.querySelector('.char')) {
-            return;
-        }
-        part.innerHTML = ''; 
-        
-        text.split('').forEach(char => {
-            const charSpan = document.createElement('span');
-            charSpan.className = 'char';
-            charSpan.textContent = char;
-            charSpan.style.animationDelay = `${totalDelay}s`;
-            part.appendChild(charSpan);
-            totalDelay += 0.05;
-        });
-    });
+    // Logo animation will be handled by the dedicated script at the end of the file
 });
 
 
