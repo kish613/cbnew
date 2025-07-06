@@ -242,7 +242,7 @@ button {
   transition: all 0.3s ease;
 }
 
-.nav__logo-img {
+/* .nav__logo-img {
   height: 3.75rem;
   width: auto;
   transition: all 0.3s ease;
@@ -251,7 +251,7 @@ button {
 
 .header.scrolled .nav__logo-img {
   height: 3rem;
-}
+} */
 
 .nav__list {
   display: flex;
