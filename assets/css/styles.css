@@ -1828,11 +1828,95 @@ button {
 }
 
 @keyframes portfolioDots {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(60px, 60px);
-  }
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+/*=============== NEW LOGO STYLES ===============*/
+.logo-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 2rem; /* Reduced font size for header */
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: letter-spacing 0.4s ease-in-out;
+}
+
+.logo-container:hover .logo-text {
+    letter-spacing: 3px; /* Slightly reduced hover spacing */
+}
+
+.logo-text .char {
+    display: inline-block; /* Required for animations */
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.logo-text .crest .char {
+    color: #1a2a4c; /* Initial blue color */
+}
+
+.logo-text .bourne .char {
+    color: #c49a3a; /* Initial gold color */
+}
+
+.logo-underline {
+    position: relative;
+    height: 3px; /* Reduced height */
+    width: 100%;
+    margin-top: 4px; /* Reduced margin */
+    background: linear-gradient(to right, #c49a3a 50%, #1a2a4c 50%);
+    overflow: hidden; /* Hide the wipe animation overflow */
+}
+
+.logo-underline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #1a2a4c 50%, #c49a3a 50%); /* Inverted gradient */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: center; /* Wipe from the center */
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.logo-container:hover .logo-text .crest .char {
+    color: #c49a3a; /* Crest becomes gold */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Gold glow */
+}
+
+.logo-container:hover .logo-text .bourne .char {
+    color: #1a2a4c; /* bourne becomes blue */
+    text-shadow: 0 0 8px rgba(70, 130, 180, 0.7); /* Blue glow */
+}
+
+.logo-container:hover .logo-underline::before {
+    transform: scaleX(1);
+}
+
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
 }
 

@@ -482,6 +482,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // New logo animation script
+    const logoParts = document.querySelectorAll('.logo-text .crest, .logo-text .bourne');
+    let totalDelay = 0;
+
+    logoParts.forEach(part => {
+        const text = part.textContent;
+        if (part.querySelector('.char')) {
+            return;
+        }
+        part.innerHTML = ''; 
+        
+        text.split('').forEach(char => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'char';
+            charSpan.textContent = char;
+            charSpan.style.animationDelay = `${totalDelay}s`;
+            part.appendChild(charSpan);
+            totalDelay += 0.05;
+        });
+    });
 });
 
 
@@ -594,4 +615,31 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.remove('scrolled');
     }
 });
+
+// This script handles the sequential letter fade-in animation on page load.
+document.addEventListener('DOMContentLoaded', () => {
+    const logoParts = document.querySelectorAll('.logo-text .crest, .logo-text .bourne');
+    let totalDelay = 0;
+
+    logoParts.forEach(part => {
+        const text = part.textContent;
+        // Check if the element has already been processed to prevent re-running
+        if (part.querySelector('.char')) {
+            return;
+        }
+        part.innerHTML = ''; // Clear the original text
+        
+        // Split text into characters, wrap each in a span, and apply animation delay
+        text.split('').forEach(char => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'char';
+            charSpan.textContent = char;
+            // Stagger the animation for each letter
+            charSpan.style.animationDelay = `${totalDelay}s`;
+            part.appendChild(charSpan);
+            totalDelay += 0.05; // Increment delay for the next letter
+        });
+    });
+});
+
 
