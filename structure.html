@@ -19,6 +19,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/sketch-bg.css">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -65,8 +66,8 @@
         </nav>
     </header>
 
-    <!-- Main -->
-    <main class="main">
+    <!-- Main Content -->
+    <main class="main" id="main">
         <!-- Home -->
         <section class="home section" id="home">
             <div class="home__container container">
@@ -113,6 +114,7 @@
 
         <!-- Group Companies Section -->
         <section class="companies section" id="companies">
+            <canvas id="sketchCanvas" class="sketch-bg" aria-hidden="true"></canvas>
             <div class="container">
                 <div class="section__header">
                     <span class="section__subtitle">Our Corporate Structure</span>
@@ -198,7 +200,7 @@
                                 <span class="company-card__name">London & Thames Housing Ltd</span>
                             </div>
                             <div class="company-card">
-                                <span class="company-card__name">City & Thames Housing Ltd</span>
+                                <span class="company-card__name">First Floor, Winston House, 349 Regents Park Road<br>London N3 1DH</span>
                             </div>
                             <div class="company-card">
                                 <span class="company-card__name">Hillcrest Estates Ltd</span>
@@ -362,7 +364,7 @@
                         <div class="footer__contact">
                             <p><i class="fas fa-phone"></i> 0203 371 5548</p>
                             <p><i class="fas fa-envelope"></i> info@crestbourne.co.uk</p>
-                            <p><i class="fas fa-map-marker-alt"></i> 34 Hillcrest Avenue, London NW11 0EN</p>
+                            <p><i class="fas fa-map-marker-alt"></i> First Floor, Winston House, 349 Regents Park Road, London N3 1DH</p>
                         </div>
                     </div>
                     
@@ -415,6 +417,8 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Page Specific Background Animation -->
+    <script src="assets/js/sketch-bg.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
     
@@ -483,23 +487,44 @@
         
         // Simple carousel logic
         let currentIndex = 0;
-        const shuffled = [...portfolioImages].sort(() => Math.random() - 0.5).slice(0, 10);
+        // Shuffle and attempt to use up to 10 images; portrait images will be skipped dynamically
+const shuffled = [...portfolioImages].sort(() => Math.random() - 0.5);
         
         function updateCarousel() {
             const img = document.getElementById('carouselImage');
             const name = document.getElementById('carouselPropertyName');
             const desc = document.getElementById('carouselPropertyDesc');
             
-            if (img && name && desc) {
-                img.src = shuffled[currentIndex].src;
-                img.alt = shuffled[currentIndex].alt;
-                name.textContent = shuffled[currentIndex].property;
-                desc.textContent = shuffled[currentIndex].alt;
+            if (!(img && name && desc)) return;
+
+            // Helper to safely assign and display the image
+            function showSlide() {
+                const data = shuffled[currentIndex];
+                img.src = data.src;
+                img.alt = data.alt;
+                name.textContent = data.property;
+                desc.textContent = data.alt;
             }
+
+            // Temporarily set a blank image while we evaluate orientation
+            img.onload = function () {
+                // Skip portrait images (height greater than width)
+                if (img.naturalHeight > img.naturalWidth) {
+                    nextImage(true); // true indicates we’re skipping portrait
+                }
+            };
+
+            showSlide();
         }
         
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % shuffled.length;
+        function nextImage(skipPortrait = false) {
+            // If we just skipped a portrait, don't advance timer twice
+            if (!skipPortrait) {
+                currentIndex = (currentIndex + 1) % shuffled.length;
+            } else {
+                // Only move index if we encountered portrait image
+                currentIndex = (currentIndex + 1) % shuffled.length;
+            }
             updateCarousel();
         }
         

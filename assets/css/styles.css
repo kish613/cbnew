@@ -433,12 +433,13 @@ button {
 }
 
 .home__background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
 }
 
 .home__bg-img {
@@ -2614,9 +2615,9 @@ button {
 .carousel__image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover; /* Ensures image fully covers the carousel area */
     display: block;
-    background: #000;
+    background: #000; /* Fallback colour, rarely visible now */
 }
 
 .carousel__info {

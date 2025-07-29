@@ -43,9 +43,9 @@
       "email": "info@crestbourne.co.uk",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "First Floor, Winston House, 349 Regents Park Road",
+        "streetAddress": "34 Hillcrest Avenue",
         "addressLocality": "London",
-        "postalCode": "N3 1DH",
+        "postalCode": "NW11 0EN",
         "addressCountry": "GB"
       },
       "foundingDate": "1997",
@@ -100,9 +100,6 @@
                     </li>
                     <li class="nav__item" role="none">
                         <a href="#featured" class="nav__link" role="menuitem">Portfolio</a>
-                    </li>
-                    <li class="nav__item" role="none">
-                        <a href="structure.html" class="nav__link" role="menuitem">Group Structure</a>
                     </li>
                     <li class="nav__item" role="none">
                         <a href="#contact" class="nav__link" role="menuitem">Contact</a>
@@ -434,7 +431,7 @@
                             </div>
                             <div class="contact__details">
                                 <h3 class="contact__title">Office Address</h3>
-                                <p class="contact__text">First Floor, Winston House, 349 Regents Park Road<br>London N3 1DH</p>
+                                <p class="contact__text">34 Hillcrest Avenue<br>London NW11 0EN</p>
                             </div>
                         </div>
                         
@@ -535,7 +532,7 @@
                         <div class="footer__contact">
                             <p><i class="fas fa-phone"></i> 0203 371 5548</p>
                             <p><i class="fas fa-envelope"></i> info@crestbourne.co.uk</p>
-                            <p><i class="fas fa-map-marker-alt"></i> First Floor, Winston House, 349 Regents Park Road, London N3 1DH</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 34 Hillcrest Avenue, London NW11 0EN</p>
                         </div>
                     </div>
                     
@@ -545,7 +542,6 @@
                             <li><a href="#home" class="footer__link">Home</a></li>
                             <li><a href="#about" class="footer__link">About Us</a></li>
                             <li><a href="#featured" class="footer__link">Portfolio</a></li>
-                            <li><a href="structure.html" class="footer__link">Group Structure</a></li>
                             <li><a href="#services" class="footer__link">Services</a></li>
                             <li><a href="#contact" class="footer__link">Contact</a></li>
                         </ul>
