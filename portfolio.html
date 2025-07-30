@@ -20,51 +20,47 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <div class="nav__data">
-                <a href="index.html" class="nav__logo">
-                    <div class="logo-container">
-                        <div class="logo-text">
-                            <span class="crest">Crest</span><span class="bourne">bourne</span>
-                        </div>
-                        <div class="logo-underline"></div>
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav__logo">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <span class="crest">Crest</span><span class="bourne">bourne</span>
                     </div>
-                </a>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line nav__burger"></i>
-                    <i class="ri-close-line nav__close"></i>
+                    <div class="logo-underline"></div>
                 </div>
-
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="index.html" class="nav__link">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="index.html#about" class="nav__link">About Us</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="portfolio.html" class="nav__link nav__link--active">Portfolio</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="structure.html" class="nav__link">Group Structure</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="index.html#services" class="nav__link">Services</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="index.html#contact" class="nav__link">Contact</a>
-                        </li>
-                    </ul>
-
-                    <div class="nav__contact">
-                        <a href="tel:02033715548" class="nav__contact-link">
-                            <i class="ri-phone-line"></i>
-                            0203 371 5548
-                        </a>
-                    </div>
+            </a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="index.html" class="nav__link" role="menuitem">Home</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#about" class="nav__link" role="menuitem">About Us</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="portfolio.html" class="nav__link active-link" role="menuitem" aria-current="page">Portfolio</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="structure.html" class="nav__link" role="menuitem">Group Structure</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#contact" class="nav__link" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close" aria-label="Close navigation menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="tel:02033715548" class="nav__phone" aria-label="Call Crestbourne at 0203 371 5548">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>0203 371 5548</span>
+                </a>
+                <div class="nav__toggle" id="nav-toggle" aria-label="Open navigation menu" role="button" tabindex="0">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </div>
             </div>
         </nav>
@@ -114,15 +110,11 @@
                     <!-- Spire Portfolio -->
                     <div class="portfolio-item" data-category="residential">
                         <div class="portfolio-item__image portfolio-item__image--gallery">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421154/spire_6_uxeqei.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy" class="active">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421153/spire_5_peaq1k.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421155/spire_10_hx3pfn.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421155/spire_10_hx3pfn.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy" class="active">
                             <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421153/spire_4_rksn9r.png" alt="Spire Portfolio - Chesterfield and Mansfield Properties" loading="lazy">
                             <div class="portfolio-gallery-indicators">
                                 <span class="portfolio-gallery-indicator active" data-slide="0"></span>
                                 <span class="portfolio-gallery-indicator" data-slide="1"></span>
-                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
-                                <span class="portfolio-gallery-indicator" data-slide="3"></span>
                             </div>
                             <div class="portfolio-item__overlay">
                                 <div class="portfolio-item__info">
@@ -235,6 +227,136 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- London Portfolio -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image portfolio-item__image--gallery">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869655/20220831_164644_rsfmck.jpg" alt="London Portfolio - Residential Properties" loading="lazy" class="active">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869650/20220907_121505_m6corj.jpg" alt="London Portfolio - Residential Properties" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/dji_mimo_20220913_124418_16_1663597550044_photo_jmswwh.jpg" alt="London Portfolio - Residential Properties" loading="lazy">
+                            <div class="portfolio-gallery-indicators">
+                                <span class="portfolio-gallery-indicator active" data-slide="0"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="1"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
+                            </div>
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">London Portfolio</h3>
+                                    <p class="portfolio-item__location">London</p>
+                                    <span class="portfolio-item__type">Hundreds of Properties</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">London Portfolio</h3>
+                            <p class="portfolio-item__location">Various Locations, London</p>
+                            <p class="portfolio-item__description">
+                                Over the years, we've acquired hundreds of residential properties in London and we actively source to gain a strategic holding in the area. Our acquisitions number in the hundreds and we buy property in any condition.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-home-line"></i>
+                                    Hundreds of Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    London Wide
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-check-line"></i>
+                                    Any Condition
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Midlands Portfolio -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image portfolio-item__image--gallery">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869654/20220831_124356_sqnqj2.jpg" alt="Midlands Portfolio - Residential Properties" loading="lazy" class="active">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869653/20220830_154535_aywhp5.jpg" alt="Midlands Portfolio - Residential Properties" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869651/20221007_135159_ljgp7y.jpg" alt="Midlands Portfolio - Residential Properties" loading="lazy">
+                            <div class="portfolio-gallery-indicators">
+                                <span class="portfolio-gallery-indicator active" data-slide="0"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="1"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
+                            </div>
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">Midlands Portfolio</h3>
+                                    <p class="portfolio-item__location">Midlands</p>
+                                    <span class="portfolio-item__type">Strategic Acquisitions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">Midlands Portfolio</h3>
+                            <p class="portfolio-item__location">Various Locations, Midlands</p>
+                            <p class="portfolio-item__description">
+                                Over the years, we have built a significant and diverse portfolio of residential properties across the Midlands, with a focus on strategic acquisition and long-term value creation. Our approach is underpinned by in-depth market knowledge and a commitment to identifying high-potential opportunities in both established and emerging locations.<br><br>
+                                We are actively expanding our footprint in the region, acquiring properties in all conditions—ranging from turnkey homes to those requiring full refurbishment. Our acquisition volume is in the hundreds, and we continue to grow through a combination of direct purchases, off-market transactions, and long-standing relationships with agents and vendors.<br><br>
+                                By maintaining a flexible and responsive acquisition strategy, we are able to adapt quickly to market dynamics and secure assets that align with our investment objectives and broader regional vision.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-home-line"></i>
+                                    Hundreds of Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    Midlands Region
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-trending-up-line"></i>
+                                    Strategic Growth
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- North West Portfolio -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-item__image portfolio-item__image--gallery">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/DJI_20220721_160904_038_lvb2kk.jpg" alt="North West Portfolio - Residential Properties" loading="lazy" class="active">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753869661/IMG_2934_w4r7nn.jpg" alt="North West Portfolio - Residential Properties" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753721219/20220810_133732_Original_2_lr7xen.jpg" alt="North West Portfolio - Residential Properties" loading="lazy">
+                            <div class="portfolio-gallery-indicators">
+                                <span class="portfolio-gallery-indicator active" data-slide="0"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="1"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
+                            </div>
+                            <div class="portfolio-item__overlay">
+                                <div class="portfolio-item__info">
+                                    <h3 class="portfolio-item__title">North West Portfolio</h3>
+                                    <p class="portfolio-item__location">North West</p>
+                                    <span class="portfolio-item__type">Regional Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">North West Portfolio</h3>
+                            <p class="portfolio-item__location">Various Locations, North West</p>
+                            <p class="portfolio-item__description">
+                                Our presence in the North West has grown steadily through a focused and disciplined acquisition strategy. We target residential properties with strong potential for long-term value and regeneration, positioning ourselves as a key player in the region's evolving housing landscape.<br><br>
+                                We have successfully secured hundreds of properties across urban and suburban areas, leveraging our ability to act quickly and decisively in a competitive market. Whether it's a vacant property, a tenanted unit, or one in need of substantial renovation, we have the expertise and resources to complete purchases efficiently and at scale.<br><br>
+                                The North West remains a core part of our investment strategy, and we continue to identify new opportunities through strategic sourcing, market insight, and strong local partnerships. Our goal is not only to expand our holdings but also to contribute positively to the communities in which we invest.
+                            </p>
+                            <div class="portfolio-item__details">
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-home-line"></i>
+                                    Hundreds of Properties
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-map-pin-line"></i>
+                                    North West Region
+                                </span>
+                                <span class="portfolio-item__detail">
+                                    <i class="ri-community-line"></i>
+                                    Community Focus
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -255,13 +377,11 @@
                     <!-- Accrington Parade -->
                     <div class="portfolio-item" data-category="commercial">
                         <div class="portfolio-item__image portfolio-item__image--gallery">
-                            <img src="assets/images/page_1.png" alt="Accrington Parade - Lancashire Retail Development" loading="lazy" class="active">
-                            <img src="assets/images/commercial_development.jpg" alt="Accrington Parade - Lancashire Retail Development" loading="lazy">
-                            <img src="assets/images/uk_property_market.jpg" alt="Accrington Parade - Lancashire Retail Development" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1749656100/3_ygcsf2.jpg" alt="Accrington Parade - Lancashire Retail Development" loading="lazy" class="active">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1749656103/BB5_2_t0etxz.jpg" alt="Accrington Parade - Lancashire Retail Development" loading="lazy">
                             <div class="portfolio-gallery-indicators">
                                 <span class="portfolio-gallery-indicator active" data-slide="0"></span>
                                 <span class="portfolio-gallery-indicator" data-slide="1"></span>
-                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
                             </div>
                             <div class="portfolio-item__overlay">
                                 <div class="portfolio-item__info">
@@ -298,13 +418,15 @@
                     <!-- Brown Portfolio -->
                     <div class="portfolio-item" data-category="commercial">
                         <div class="portfolio-item__image portfolio-item__image--gallery">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1751890465/portfolio_by_abby__image9_tmfuxv.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy" class="active">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1751890465/portfolio_by_abby__image8_nkhrfx.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1751890465/portfolio_by_abby__image11_yh3giq.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1749656104/BB5_3_mjod1a.jpg" alt="Brown Portfolio - Mixed Use Collection" loading="lazy" class="active">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421133/Screenshot_2025-06-06_at_17.39.12_pcslj5.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421132/Screenshot_2025-06-06_at_17.38.48_ucrkci.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
+                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1750421156/Screenshot_2025-06-06_at_17.40.30_ysv5st.png" alt="Brown Portfolio - Mixed Use Collection" loading="lazy">
                             <div class="portfolio-gallery-indicators">
                                 <span class="portfolio-gallery-indicator active" data-slide="0"></span>
                                 <span class="portfolio-gallery-indicator" data-slide="1"></span>
                                 <span class="portfolio-gallery-indicator" data-slide="2"></span>
+                                <span class="portfolio-gallery-indicator" data-slide="3"></span>
                             </div>
                             <div class="portfolio-item__overlay">
                                 <div class="portfolio-item__info">
@@ -609,14 +731,11 @@
                     <div class="portfolio-item" data-category="commercial">
                         <div class="portfolio-item__image portfolio-item__image--gallery">
                             <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753728407/f0cca6d4-d357-11ef-9049-0242ac110002---auto--_uvqjfm.jpg" alt="Long Row Nottingham - Prime Retail Location" loading="lazy" class="active">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753728405/d7fff70c-d409-11ef-a907-0242ac110002---auto--_cpiupa.jpg" alt="Long Row Nottingham - Prime Retail Location" loading="lazy">
-                            <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753728406/ac6d24ea-cf39-11ef-b133-0242ac110002---auto--_z2nvjh.jpg" alt="Long Row Nottingham - Prime Retail Location" loading="lazy">
+
                             <img src="https://res.cloudinary.com/dmns9ystn/image/upload/v1753728406/0e66eaec-d358-11ef-baf2-0242ac110002---auto--_evworq.jpg" alt="Long Row Nottingham - Prime Retail Location" loading="lazy">
                             <div class="portfolio-gallery-indicators">
                                 <span class="portfolio-gallery-indicator active" data-slide="0"></span>
                                 <span class="portfolio-gallery-indicator" data-slide="1"></span>
-                                <span class="portfolio-gallery-indicator" data-slide="2"></span>
-                                <span class="portfolio-gallery-indicator" data-slide="3"></span>
                             </div>
                             <div class="portfolio-item__overlay">
                                 <div class="portfolio-item__info">
@@ -658,8 +777,8 @@
         <section class="portfolio-cta section animated-bg-lines">
             <div class="container">
                 <div class="portfolio-cta__content">
-                    <h2 class="portfolio-cta__title">Interested in Our Portfolio?</h2>
-                    <p class="portfolio-cta__description">
+                    <h2 class="portfolio-cta__title" style="color: #000000;">Interested in Our Portfolio?</h2>
+                    <p class="portfolio-cta__description" style="color: #000000;">
                         Discover investment opportunities and learn more about our comprehensive property portfolio. 
                         Contact our team for detailed information and investment guidance.
                     </p>
