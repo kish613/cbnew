@@ -244,16 +244,16 @@ button {
   transition: all 0.3s ease;
 }
 
-/* .nav__logo-img {
-  height: 3.75rem;
+.nav__logo-img {
+  height: 3.5rem;
   width: auto;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.1));
+  display: block;
 }
 
 .header.scrolled .nav__logo-img {
   height: 3rem;
-} */
+}
 
 .nav__list {
   display: flex;
@@ -2087,13 +2087,106 @@ button {
 .nav__logo {
     display: flex;
     align-items: center;
+    padding: 10px 0;
+}
+
+/* Animated Logo Styles */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
 .logo-text {
-    font-size: 2rem; /* Reduced font size for header */
-    font-weight: 700;
-    letter-spacing: 2px;
-    transition: letter-spacing 0.4s ease-in-out;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--title-color);
+    margin-bottom: 6px;
+    font-family: var(--body-font);
+}
+
+.logo-icon {
+    width: 32px;
+    height: 16px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.logo-icon::before,
+.logo-icon::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transition: all 0.4s ease;
+}
+
+.logo-icon::before {
+    left: 0;
+    background-color: var(--title-color);
+    border-radius: 8px 0 0 8px;
+}
+
+.logo-icon::after {
+    right: 0;
+    background-color: #ff6b35;
+    border-radius: 0 8px 8px 0;
+}
+
+.logo-container:hover .logo-icon::before {
+    background-color: #ff6b35;
+}
+
+.logo-container:hover .logo-icon::after {
+    background-color: var(--title-color);
+}
+
+/* Adjust for smaller header when scrolled */
+.header.scrolled .logo-text {
+    font-size: 1rem;
+}
+
+.header.scrolled .logo-icon {
+    width: 28px;
+    height: 14px;
+}
+
+.header.scrolled .logo-icon::before,
+.header.scrolled .logo-icon::after {
+    width: 14px;
+    height: 14px;
+}
+
+/* Footer logo adjustments */
+.footer__logo .logo-container {
+    margin-bottom: var(--mb-1);
+}
+
+.footer__logo .logo-text {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.footer__logo .logo-icon::before {
+    background-color: #fff;
+}
+
+.footer__logo .logo-icon::after {
+    background-color: #ff6b35;
+}
+
+.footer__logo .logo-container:hover .logo-icon::before {
+    background-color: #ff6b35;
+}
+
+.footer__logo .logo-container:hover .logo-icon::after {
+    background-color: #fff;
+}
 }
 
 .logo-container:hover .logo-text {
