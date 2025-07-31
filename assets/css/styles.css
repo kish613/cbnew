@@ -3,7 +3,7 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 4rem;
+  --header-height: 5rem;
 
   /*========== Colors ==========*/
   /* Color mode HSL(hue, saturation, lightness) */
@@ -249,6 +249,10 @@ button {
   width: auto;
   transition: all 0.3s ease;
   display: block;
+}
+
+.header.scrolled .nav {
+  height: 4rem;
 }
 
 .header.scrolled .nav__logo-img {
@@ -1508,6 +1512,78 @@ button {
   background: rgba(255, 255, 255, 0.8);
 }
 
+/* Portfolio Gallery Styles */
+.portfolio-gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.portfolio-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gallery Navigation Dots */
+.gallery-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.gallery-dot.active {
+  background: var(--accent-color);
+}
+
+.gallery-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Address Overlay Styles */
+.gallery-address-overlays {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.gallery-address {
+  display: none;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.gallery-address.active {
+  display: block;
+}
+
 .portfolio-item__overlay {
   position: absolute;
   top: 0;
@@ -2087,7 +2163,7 @@ button {
 .nav__logo {
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 0;
 }
 
 /* Animated Logo Styles */
@@ -2095,24 +2171,27 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
+    height: 100%;
 }
 
 .logo-text {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--title-color);
-    margin-bottom: 6px;
+    color: #000000;
+    margin-bottom: 2px;
     font-family: var(--body-font);
+    line-height: 1.5;
 }
 
 .logo-icon {
-    width: 32px;
-    height: 16px;
+    width: 30px;
+    height: 15px;
     position: relative;
-    border-radius: 8px;
+    border-radius: 7.5px;
     overflow: hidden;
     transition: all 0.4s ease;
 }
@@ -2121,21 +2200,21 @@ button {
 .logo-icon::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     transition: all 0.4s ease;
 }
 
 .logo-icon::before {
     left: 0;
-    background-color: var(--title-color);
-    border-radius: 8px 0 0 8px;
+    background-color: #000000;
+    border-radius: 7.5px 0 0 7.5px;
 }
 
 .logo-icon::after {
     right: 0;
     background-color: #ff6b35;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 7.5px 7.5px 0;
 }
 
 .logo-container:hover .logo-icon::before {
@@ -2143,23 +2222,23 @@ button {
 }
 
 .logo-container:hover .logo-icon::after {
-    background-color: var(--title-color);
+    background-color: #000000;
 }
 
 /* Adjust for smaller header when scrolled */
 .header.scrolled .logo-text {
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 .header.scrolled .logo-icon {
-    width: 28px;
-    height: 14px;
+    width: 24px;
+    height: 12px;
 }
 
 .header.scrolled .logo-icon::before,
 .header.scrolled .logo-icon::after {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
 }
 
 /* Footer logo adjustments */

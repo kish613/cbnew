@@ -674,4 +674,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/*=============== PORTFOLIO GALLERY NAVIGATION ===============*/
+document.addEventListener('DOMContentLoaded', () => {
+    const galleries = document.querySelectorAll('.portfolio-gallery');
+    
+    galleries.forEach(gallery => {
+        const images = gallery.querySelectorAll('img');
+        const dots = gallery.querySelectorAll('.gallery-dot');
+        const addressOverlays = gallery.querySelectorAll('.gallery-address');
+        let currentIndex = 0;
+        
+        // Function to show specific slide
+        function showSlide(index) {
+            // Hide all images and address overlays
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            // Update address overlays if they exist
+            if (addressOverlays.length > 0) {
+                addressOverlays.forEach((address, i) => {
+                    address.classList.toggle('active', i === index);
+                });
+            }
+            
+            currentIndex = index;
+        }
+        
+        // Add click event to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Initialize first slide
+        showSlide(0);
+    });
+});
 
