@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "Bash(vercel:*)",
       "Bash(git pull:*)",
-      "Bash(python:*)",
       "Bash(git add:*)"
     ],
     "deny": []
