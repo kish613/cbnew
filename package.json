@@ -1,0 +1,17 @@
+{
+  "name": "crestbourne-portfolio",
+  "version": "1.0.0",
+  "description": "Crestbourne Property Investment Portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build required'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}

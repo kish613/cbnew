@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Crestbourne Property Investment</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dmns9ystn/image/upload/v1753826782/cb_upscaled_hwmdvo.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div class="admin-login" id="adminLogin">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Admin Portal</h1>
+                <p>Crestbourne Property Management</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="errorMessage"></span>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-nav">
+                <h1>Portfolio Management</h1>
+                <div class="admin-actions">
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> View Site
+                    </button>
+                    <button class="btn-secondary" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-container">
+                <!-- Portfolio Tabs -->
+                <div class="portfolio-tabs">
+                    <button class="tab-btn active" data-tab="residential">Residential Properties</button>
+                    <button class="tab-btn" data-tab="commercial">Commercial Properties</button>
+                </div>
+
+                <!-- Add New Portfolio Button -->
+                <div class="action-bar">
+                    <button class="btn-primary" onclick="openAddPortfolioModal()">
+                        <i class="fas fa-plus"></i> Add New Portfolio
+                    </button>
+                </div>
+
+                <!-- Portfolio List -->
+                <div class="portfolio-list" id="portfolioList">
+                    <!-- Portfolio items will be dynamically loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Portfolio Modal -->
+    <div class="modal" id="portfolioModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Portfolio</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="portfolioForm" class="portfolio-form">
+                <input type="hidden" id="portfolioId">
+                <input type="hidden" id="portfolioIndex">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="portfolioTitle">Portfolio Title *</label>
+                        <input type="text" id="portfolioTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioCategory">Category *</label>
+                        <select id="portfolioCategory" required>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="portfolioLocation">Location *</label>
+                        <input type="text" id="portfolioLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioType">Type/Tag</label>
+                        <input type="text" id="portfolioType" placeholder="e.g., Mixed Portfolio, Block Management">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolioAddress">Full Address</label>
+                    <input type="text" id="portfolioAddress" placeholder="e.g., 123 Main St, London, SW1 1AA">
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolioDescription">Description *</label>
+                    <textarea id="portfolioDescription" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="portfolioDetail1Icon">Detail 1 Icon</label>
+                        <input type="text" id="portfolioDetail1Icon" placeholder="e.g., ri-building-line">
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioDetail1Text">Detail 1 Text</label>
+                        <input type="text" id="portfolioDetail1Text" placeholder="e.g., 25 Properties">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="portfolioDetail2Icon">Detail 2 Icon</label>
+                        <input type="text" id="portfolioDetail2Icon" placeholder="e.g., ri-map-pin-line">
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioDetail2Text">Detail 2 Text</label>
+                        <input type="text" id="portfolioDetail2Text" placeholder="e.g., West London">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="portfolioDetail3Icon">Detail 3 Icon</label>
+                        <input type="text" id="portfolioDetail3Icon" placeholder="e.g., ri-home-4-line">
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioDetail3Text">Detail 3 Text</label>
+                        <input type="text" id="portfolioDetail3Text" placeholder="e.g., Residential Complex">
+                    </div>
+                </div>
+
+                <!-- Image Management -->
+                <div class="form-group">
+                    <label>Portfolio Images</label>
+                    <div class="image-upload-area">
+                        <div class="image-list" id="imageList">
+                            <!-- Images will be listed here -->
+                        </div>
+                        <button type="button" class="btn-add-image" onclick="addImageInput()">
+                            <i class="fas fa-plus"></i> Add Image
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Portfolio</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin JavaScript -->
+    <script src="assets/js/admin-api.js"></script>
+</body>
+</html>
