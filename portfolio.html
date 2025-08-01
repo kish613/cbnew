@@ -1072,6 +1072,25 @@
     
     <!-- Portfolio Loader - Loads data from admin panel -->
     <script src="assets/js/portfolio-loader-api.js"></script>
+    
+    <!-- Portfolio Modal Gallery Script -->
+    <script src="assets/js/portfolio-modal.js"></script>
+    
+    <!-- Portfolio Gallery Modal -->
+    <div id="portfolioModal" class="portfolio-modal">
+        <div class="portfolio-modal__content">
+            <button class="portfolio-modal__close" aria-label="Close gallery">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="portfolio-modal__header">
+                <h2 class="portfolio-modal__title"></h2>
+                <p class="portfolio-modal__location"></p>
+            </div>
+            <div class="portfolio-modal__grid">
+                <!-- Images will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

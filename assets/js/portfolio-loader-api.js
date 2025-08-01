@@ -57,6 +57,16 @@
         item.className = 'portfolio-item';
         item.setAttribute('data-category', category);
         
+        // Add click handler to open modal
+        item.addEventListener('click', function(e) {
+            // Don't open modal if clicking on read more button
+            if (!e.target.classList.contains('portfolio-item__read-more')) {
+                if (window.openPortfolioModal) {
+                    window.openPortfolioModal(portfolio);
+                }
+            }
+        });
+        
         // Check if this is the "Properties Bought Individually" portfolio
         const isIndividualProperties = portfolio.title === "Properties Bought Individually";
         
