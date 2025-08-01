@@ -1419,7 +1419,6 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
-  align-items: start;
 }
 
 .portfolio-item {
@@ -1429,9 +1428,6 @@ button {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
 }
 
 .portfolio-item:hover {
@@ -1635,9 +1631,6 @@ button {
 
 .portfolio-item__content {
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  height: auto;
 }
 
 .portfolio-item__content .portfolio-item__title {
