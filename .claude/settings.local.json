@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Bash(vercel:*)",
@@ -11,7 +12,9 @@
       "Bash(npm install:*)",
       "Bash(node:*)",
       "Bash(vercel:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(npm install)"
     ],
     "deny": []
   }
