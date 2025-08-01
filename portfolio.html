@@ -1119,6 +1119,53 @@
                     });
                 });
             });
+            
+            // Add click handlers for Individually Purchased Properties items
+            const individualItems = document.querySelectorAll('#individually-purchased .portfolio-item');
+            
+            individualItems.forEach(item => {
+                item.style.cursor = 'pointer';
+                
+                item.addEventListener('click', function(e) {
+                    // Don't open modal if clicking on gallery controls
+                    if (e.target.closest('.gallery-nav') || e.target.classList.contains('gallery-dot')) {
+                        return;
+                    }
+                    
+                    // Get portfolio info
+                    const title = this.querySelector('.portfolio-item__title').textContent;
+                    const location = this.querySelector('.portfolio-item__location').textContent;
+                    
+                    // Gather all images and addresses from this item
+                    const images = [];
+                    const imgElements = this.querySelectorAll('.portfolio-gallery img');
+                    const addresses = this.querySelectorAll('.gallery-address');
+                    
+                    imgElements.forEach((img, index) => {
+                        const imageData = {
+                            url: img.src,
+                            alt: img.alt
+                        };
+                        
+                        // Add address if available
+                        if (addresses[index]) {
+                            imageData.address = addresses[index].textContent;
+                            imageData.alt = addresses[index].textContent; // Use address as alt text for modal
+                        }
+                        
+                        images.push(imageData);
+                    });
+                    
+                    // Open modal with portfolio data
+                    if (window.openPortfolioModal) {
+                        window.openPortfolioModal({
+                            title: title,
+                            location: location,
+                            images: images
+                        });
+                    }
+                });
+            });
         });
     </script>
     
