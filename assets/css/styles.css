@@ -1588,6 +1588,51 @@ button {
   display: block;
 }
 
+/* Region Tabs Styles */
+.region-tabs {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.region-tab {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid rgba(26, 43, 61, 0.2);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.region-tab:hover {
+  background: rgba(26, 43, 61, 0.05);
+  border-color: var(--accent-color);
+}
+
+.region-tab.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.region-gallery {
+  position: relative;
+}
+
 .portfolio-item__overlay {
   position: absolute;
   top: 0;
