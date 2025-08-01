@@ -1428,6 +1428,9 @@ button {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 520px;
 }
 
 .portfolio-item:hover {
@@ -1631,6 +1634,10 @@ button {
 
 .portfolio-item__content {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .portfolio-item__content .portfolio-item__title {
@@ -1650,13 +1657,52 @@ button {
 .portfolio-item__description {
   color: var(--text-color);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  max-height: 3.2em;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.portfolio-item__description.expanded {
+  max-height: none;
+}
+
+.portfolio-item__description.truncated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+  background: linear-gradient(to bottom, transparent, var(--container-color));
+}
+
+.portfolio-item__read-more {
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: none;
+}
+
+.portfolio-item__read-more:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.portfolio-item__read-more.visible {
+  display: inline-block;
 }
 
 .portfolio-item__details {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .portfolio-item__detail {

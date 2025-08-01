@@ -44,6 +44,50 @@ function scrollUp(){
 }
 window.addEventListener('scroll', scrollUp)
 
+/*=============== PORTFOLIO DESCRIPTION READ MORE ===============*/
+function initReadMore() {
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('portfolio-item__read-more')) {
+            e.preventDefault();
+            const readMore = e.target;
+            const description = readMore.previousElementSibling;
+            
+            if (description.classList.contains('expanded')) {
+                description.classList.remove('expanded');
+                readMore.textContent = 'Read more';
+            } else {
+                description.classList.add('expanded');
+                readMore.textContent = 'Read less';
+            }
+        }
+    });
+    
+    // Check which descriptions need read more button
+    const checkDescriptions = () => {
+        const descriptions = document.querySelectorAll('.portfolio-item__description');
+        descriptions.forEach(desc => {
+            const readMore = desc.nextElementSibling;
+            if (readMore && readMore.classList.contains('portfolio-item__read-more')) {
+                // Check if text overflows
+                if (desc.scrollHeight > desc.clientHeight + 2) {
+                    desc.classList.add('truncated');
+                    readMore.classList.add('visible');
+                } else {
+                    desc.classList.remove('truncated');
+                    readMore.classList.remove('visible');
+                }
+            }
+        });
+    };
+    
+    // Run check on load and after portfolio items are loaded
+    setTimeout(checkDescriptions, 500);
+    window.addEventListener('resize', checkDescriptions);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initReadMore);
+
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
 

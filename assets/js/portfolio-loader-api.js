@@ -127,7 +127,8 @@
             <div class="portfolio-item__content">
                 <h3 class="portfolio-item__title">${portfolio.title}</h3>
                 <p class="portfolio-item__location">${portfolio.address || portfolio.location}</p>
-                <p class="portfolio-item__description">${portfolio.description}</p>
+                <p class="portfolio-item__description">${portfolio.description || ''}</p>
+                <a href="#" class="portfolio-item__read-more">Read more</a>
                 <div class="portfolio-item__details">
                     ${portfolio.details.map(detail => 
                         `<span class="portfolio-item__detail">
