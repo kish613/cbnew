@@ -47,53 +47,7 @@
         
         // Add portfolios from API data
         portfolios.forEach(portfolio => {
-            // Skip Tower Bridge Quarter in commercial section as it's featured
-            if (category === 'commercial' && portfolio.portfolio_id === 'mdrr1ao2wo32jc39wm') {
-                return;
-            }
             const portfolioItem = createPortfolioItem(portfolio, category);
-            
-            // Add income chart for Tower Bridge Quarter
-            if (portfolio.portfolio_id === 'mdrr1ao2wo32jc39wm') {
-                const chartContainer = document.createElement('div');
-                chartContainer.className = 'portfolio-income-chart';
-                chartContainer.innerHTML = `
-                    <div class="income-chart__header">
-                        <h4 class="income-chart__title">Annual Rental Income</h4>
-                        <div class="income-chart__amount">£899,875</div>
-                    </div>
-                    <div class="income-chart__visual">
-                        <div class="income-chart__bar-container">
-                            <div class="income-chart__bar" data-percentage="100">
-                                <div class="income-chart__bar-fill"></div>
-                                <div class="income-chart__bar-label">£899,875</div>
-                            </div>
-                        </div>
-                        <div class="income-chart__stats">
-                            <div class="income-chart__stat">
-                                <div class="income-chart__stat-value">6%</div>
-                                <div class="income-chart__stat-label">Annual Yield</div>
-                            </div>
-                            <div class="income-chart__stat">
-                                <div class="income-chart__stat-value">£75k</div>
-                                <div class="income-chart__stat-label">Monthly Income</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="income-chart__breakdown">
-                        <div class="income-chart__breakdown-item">
-                            <span class="income-chart__breakdown-label">Retail Units</span>
-                            <span class="income-chart__breakdown-value">65%</span>
-                        </div>
-                        <div class="income-chart__breakdown-item">
-                            <span class="income-chart__breakdown-label">Office Spaces</span>
-                            <span class="income-chart__breakdown-value">35%</span>
-                        </div>
-                    </div>
-                `;
-                portfolioItem.appendChild(chartContainer);
-            }
-            
             gridElement.appendChild(portfolioItem);
         });
     }
