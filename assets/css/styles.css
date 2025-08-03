@@ -212,6 +212,20 @@ button {
   justify-content: center;
 }
 
+.button--large {
+  padding: 1rem 2rem;
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.button--large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -2548,7 +2562,9 @@ button {
 
 .featured__cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 /*=============== RESPONSIVE FEATURED ===============*/
