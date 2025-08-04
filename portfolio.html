@@ -1209,11 +1209,21 @@
                 freshButtons.forEach(button => {
                     button.addEventListener('click', function(e) {
                         e.preventDefault();
+                        e.stopPropagation();
                         
                         const portfolioItem = this.closest('.portfolio-item');
                         const title = portfolioItem.querySelector('.portfolio-item__title').textContent;
                         const location = portfolioItem.querySelector('.portfolio-item__location').textContent;
                         const description = portfolioItem.querySelector('.portfolio-item__description')?.textContent || '';
+                        
+                        // Get details
+                        const details = [];
+                        portfolioItem.querySelectorAll('.portfolio-item__detail').forEach(detail => {
+                            details.push({
+                                icon: detail.querySelector('i').className,
+                                text: detail.textContent.trim()
+                            });
+                        });
                         
                         // Gather all images from this item
                         const images = [];
@@ -1232,6 +1242,7 @@
                                 title: title,
                                 location: location,
                                 description: description,
+                                details: details,
                                 images: images
                             });
                         }

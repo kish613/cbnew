@@ -59,8 +59,8 @@
         
         // Add click handler to open modal
         item.addEventListener('click', function(e) {
-            // Don't open modal if clicking on read more button
-            if (!e.target.classList.contains('portfolio-item__read-more')) {
+            // Don't open modal if clicking on see more button or its children
+            if (!e.target.closest('.portfolio-item__see-more-btn') && !e.target.closest('.portfolio-item__see-more')) {
                 if (window.openPortfolioModal) {
                     window.openPortfolioModal(portfolio);
                 }
@@ -153,7 +153,6 @@
                 <h3 class="portfolio-item__title">${portfolio.title}</h3>
                 <p class="portfolio-item__location">${portfolio.address || portfolio.location}</p>
                 <p class="portfolio-item__description">${displayDescription || ''}</p>
-                <a href="#" class="portfolio-item__read-more">Read more</a>
                 <div class="portfolio-item__details">
                     ${portfolio.details.map(detail => 
                         `<span class="portfolio-item__detail">
@@ -162,8 +161,26 @@
                         </span>`
                     ).join('')}
                 </div>
+                <div class="portfolio-item__see-more">
+                    <button class="portfolio-item__see-more-btn">
+                        See More
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
             </div>
         `;
+        
+        // Add see more button handler
+        const seeMoreBtn = item.querySelector('.portfolio-item__see-more-btn');
+        if (seeMoreBtn) {
+            seeMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (window.openPortfolioModal) {
+                    window.openPortfolioModal(portfolio);
+                }
+            });
+        }
         
         return item;
     }
