@@ -2976,7 +2976,7 @@ button {
 /*=============== COMPANY STRUCTURE PAGE ===============*/
 /* Companies Section */
 .companies {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: #FAFAFA;
   position: relative;
 }
@@ -2988,10 +2988,11 @@ button {
 .companies__grid {
   margin-top: 2rem;
   width: 100%;
+  max-width: 1400px;
 }
 
 .companies__category {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .companies__category-header {
@@ -3018,15 +3019,16 @@ button {
 
 .companies__list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
 }
 
 /* Professional Company Cards */
 .company-card {
   background: #FFFFFF;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
@@ -3058,13 +3060,13 @@ button {
 }
 
 .company-card__name {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--primary-color);
   font-family: var(--title-font);
   letter-spacing: -0.3px;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -3539,9 +3541,9 @@ button {
 /* Adjust companies section layout */
 .companies__content {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 3rem;
-    align-items: flex-start;
+    flex-direction: column !important;
+    gap: 2rem;
+    align-items: center;
     position: relative;
     width: 100%;
 }
