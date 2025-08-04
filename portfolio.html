@@ -1198,52 +1198,16 @@
                 });
             });
             
-            // Add click handlers for Individually Purchased Properties items
+            // Remove the overlay click prompt for individual property items since they have See More buttons
             const individualItems = document.querySelectorAll('#residential .portfolio-gallery--with-address').length > 0 ? 
                 document.querySelectorAll('#residential .portfolio-item:has(.portfolio-gallery--with-address)') : [];
             
             individualItems.forEach(item => {
-                item.style.cursor = 'pointer';
-                
-                item.addEventListener('click', function(e) {
-                    // Don't open modal if clicking on gallery controls
-                    if (e.target.closest('.gallery-nav') || e.target.classList.contains('gallery-dot')) {
-                        return;
-                    }
-                    
-                    // Get portfolio info
-                    const title = this.querySelector('.portfolio-item__title').textContent;
-                    const location = this.querySelector('.portfolio-item__location').textContent;
-                    
-                    // Gather all images and addresses from this item
-                    const images = [];
-                    const imgElements = this.querySelectorAll('.portfolio-gallery img');
-                    const addresses = this.querySelectorAll('.gallery-address');
-                    
-                    imgElements.forEach((img, index) => {
-                        const imageData = {
-                            url: img.src,
-                            alt: img.alt
-                        };
-                        
-                        // Add address if available
-                        if (addresses[index]) {
-                            imageData.address = addresses[index].textContent;
-                            imageData.alt = addresses[index].textContent; // Use address as alt text for modal
-                        }
-                        
-                        images.push(imageData);
-                    });
-                    
-                    // Open modal with portfolio data
-                    if (window.openPortfolioModal) {
-                        window.openPortfolioModal({
-                            title: title,
-                            location: location,
-                            images: images
-                        });
-                    }
-                });
+                // Remove the "Click to View Gallery" overlay for these items
+                const overlay = item.querySelector('.portfolio-item__overlay');
+                if (overlay) {
+                    overlay.style.pointerEvents = 'none';
+                }
             });
             
             // Function to initialize See More button handlers

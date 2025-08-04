@@ -2287,6 +2287,15 @@ button {
   transform: translateX(3px);
 }
 
+/* Hide overlay interaction for items with gallery addresses (individual properties) */
+.portfolio-item:has(.portfolio-gallery--with-address) .portfolio-item__overlay {
+  pointer-events: none;
+}
+
+.portfolio-item:has(.portfolio-gallery--with-address) .portfolio-item__overlay::after {
+  display: none;
+}
+
 .portfolio-item__detail {
   display: flex;
   align-items: center;
