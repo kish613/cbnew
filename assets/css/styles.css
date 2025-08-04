@@ -2249,9 +2249,9 @@ button {
 }
 
 .portfolio-item__see-more-btn {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   padding: 0.75rem 1.5rem;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
@@ -2266,7 +2266,8 @@ button {
 }
 
 .portfolio-item__see-more-btn:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-color);
+  color: var(--white-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(26, 43, 61, 0.15);
 }
