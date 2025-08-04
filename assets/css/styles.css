@@ -3910,3 +3910,32 @@ button {
   }
 }
 
+/* Portfolio Subsection Styles */
+.portfolio-subsection {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-top: 2px solid var(--border-color);
+  position: relative;
+}
+
+.portfolio-subsection__title {
+  font-size: 2rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 1.25rem;
+  font-family: var(--title-font);
+  text-align: center;
+}
+
+.portfolio-subsection__description {
+  font-size: var(--normal-font-size);
+  color: var(--text-color-light);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
+  padding: 0 1rem;
+}
+
