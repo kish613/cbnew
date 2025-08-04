@@ -70,24 +70,29 @@
         // Check if this is the "Properties Bought Individually" portfolio
         const isIndividualProperties = portfolio.title === "Properties Bought Individually";
         
+        // Reorder images based on featured_image_order
+        const displayImages = window.reorderImagesForDisplay ? 
+            window.reorderImagesForDisplay(portfolio.images, portfolio.featured_image_order) : 
+            portfolio.images;
+        
         // Create image gallery HTML
         let galleryHTML = '';
-        if (portfolio.images && portfolio.images.length > 0) {
-            if (portfolio.images.length > 1) {
+        if (displayImages && displayImages.length > 0) {
+            if (displayImages.length > 1) {
                 // Multi-image gallery - matching the original HTML structure
                 if (isIndividualProperties || portfolio.title === "Newlands Croft") {
                     // Special galleries with portfolio-gallery class
                     const galleryClass = isIndividualProperties ? 'portfolio-gallery portfolio-gallery--with-address' : 'portfolio-gallery';
                     galleryHTML = `<div class="${galleryClass}">`;
                     
-                    portfolio.images.forEach((img, index) => {
+                    displayImages.forEach((img, index) => {
                         galleryHTML += `<img src="${img.url}" alt="${img.alt}" loading="lazy"${index > 0 ? ' style="display: none;"' : ''}>`;
                     });
                     
                     // Add address overlays if needed
                     if (isIndividualProperties) {
                         galleryHTML += '<div class="gallery-address-overlays">';
-                        portfolio.images.forEach((img, index) => {
+                        displayImages.forEach((img, index) => {
                             const address = img.address || '';
                             galleryHTML += `<span class="gallery-address${index === 0 ? ' active' : ''}">${address}</span>`;
                         });
@@ -96,31 +101,31 @@
                     
                     // Add navigation dots
                     galleryHTML += '<div class="gallery-nav">';
-                    portfolio.images.forEach((img, index) => {
+                    displayImages.forEach((img, index) => {
                         galleryHTML += `<span class="gallery-dot${index === 0 ? ' active' : ''}" data-slide="${index}"></span>`;
                     });
                     galleryHTML += '</div></div>';
                 } else {
                     // Standard gallery with images directly in portfolio-item__image
-                    portfolio.images.forEach((img, index) => {
+                    displayImages.forEach((img, index) => {
                         galleryHTML += `<img src="${img.url}" alt="${img.alt}" loading="lazy"${index === 0 ? ' class="active"' : ''}>`;
                     });
                     
                     // Add portfolio-gallery-indicators
                     galleryHTML += '<div class="portfolio-gallery-indicators">';
-                    portfolio.images.forEach((img, index) => {
+                    displayImages.forEach((img, index) => {
                         galleryHTML += `<span class="portfolio-gallery-indicator${index === 0 ? ' active' : ''}" data-slide="${index}"></span>`;
                     });
                     galleryHTML += '</div>';
                 }
             } else {
                 // Single image
-                galleryHTML = `<img src="${portfolio.images[0].url}" alt="${portfolio.images[0].alt}" loading="lazy">`;
+                galleryHTML = `<img src="${displayImages[0].url}" alt="${displayImages[0].alt}" loading="lazy">`;
             }
         }
         
         // Determine if this should have gallery class
-        const hasGallery = portfolio.images && portfolio.images.length > 1;
+        const hasGallery = displayImages && displayImages.length > 1;
         const imageClass = hasGallery ? 'portfolio-item__image portfolio-item__image--gallery' : 'portfolio-item__image';
         
         item.innerHTML = `

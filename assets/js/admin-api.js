@@ -134,10 +134,16 @@ function createPortfolioItem(portfolio, index) {
     item.dataset.index = index;
     item.dataset.portfolioId = portfolio.id;
     
+    // Get the featured image based on featured_image_order
+    const featuredImageIndex = portfolio.featured_image_order || 0;
+    const featuredImage = portfolio.images && portfolio.images.length > 0 ? 
+        portfolio.images[Math.min(featuredImageIndex, portfolio.images.length - 1)] : 
+        null;
+    
     item.innerHTML = `
         <div class="portfolio-thumbnail">
-            ${portfolio.images && portfolio.images.length > 0 ? 
-                `<img src="${portfolio.images[0].url}" alt="${portfolio.images[0].alt}">
+            ${featuredImage ? 
+                `<img src="${featuredImage.url}" alt="${featuredImage.alt}">
                  <span class="image-count">${portfolio.images.length} images</span>` :
                 '<div style="background: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">No Image</div>'
             }
@@ -233,6 +239,9 @@ function loadImages(images) {
     images.forEach((image, index) => {
         addImageInput(image.url, image.alt, image.address);
     });
+    
+    // Update featured image selector
+    updateFeaturedImageSelector();
 }
 
 function addImageInput(url = '', alt = '', address = '') {
@@ -243,7 +252,7 @@ function addImageInput(url = '', alt = '', address = '') {
     const showAddressField = document.getElementById('portfolioTitle').value === "Properties Bought Individually";
     
     imageItem.innerHTML = `
-        <input type="text" placeholder="Image URL (Cloudinary)" value="${url}" class="image-url">
+        <input type="text" placeholder="Image URL (Cloudinary)" value="${url}" class="image-url" onchange="updateFeaturedImageSelector()">
         <input type="text" placeholder="Alt text" value="${alt}" class="image-alt">
         ${showAddressField ? 
             `<input type="text" placeholder="Address (for overlay)" value="${address || ''}" class="image-address">` : 
@@ -261,10 +270,12 @@ function addImageInput(url = '', alt = '', address = '') {
     `;
     
     imageList.appendChild(imageItem);
+    updateFeaturedImageSelector();
 }
 
 function removeImage(button) {
     button.closest('.image-item').remove();
+    updateFeaturedImageSelector();
 }
 
 function moveImage(button, direction) {
@@ -278,6 +289,59 @@ function moveImage(button, direction) {
             item.parentNode.insertBefore(sibling, item);
         }
     }
+    updateFeaturedImageSelector();
+}
+
+// Update featured image selector
+function updateFeaturedImageSelector() {
+    const selector = document.getElementById('featuredImageSelector');
+    const imageItems = document.querySelectorAll('.image-item');
+    selector.innerHTML = '';
+    
+    if (imageItems.length === 0) {
+        selector.innerHTML = '<p style="color: #666; font-size: 0.875rem;">Add images to select a featured image</p>';
+        return;
+    }
+    
+    const currentFeaturedIndex = editingPortfolio !== null ? 
+        (portfolioData[currentTab][editingPortfolio].featured_image_order || 0) : 0;
+    
+    imageItems.forEach((item, index) => {
+        const urlInput = item.querySelector('.image-url');
+        const altInput = item.querySelector('.image-alt');
+        
+        if (urlInput.value) {
+            const option = document.createElement('label');
+            option.className = 'featured-image-option';
+            if (index === currentFeaturedIndex) {
+                option.classList.add('selected');
+            }
+            
+            option.innerHTML = `
+                <input type="radio" name="featuredImage" value="${index}" 
+                    ${index === currentFeaturedIndex ? 'checked' : ''}
+                    onchange="selectFeaturedImage(${index})">
+                <img src="${urlInput.value}" alt="${altInput.value || 'Portfolio image'}" 
+                    onerror="this.src='https://via.placeholder.com/150x120?text=Invalid+Image'">
+                <span class="featured-image-label">
+                    ${index === 0 ? 'Default' : `Image ${index + 1}`}
+                </span>
+            `;
+            
+            selector.appendChild(option);
+        }
+    });
+}
+
+// Select featured image
+function selectFeaturedImage(index) {
+    document.querySelectorAll('.featured-image-option').forEach((option, i) => {
+        if (i === index) {
+            option.classList.add('selected');
+        } else {
+            option.classList.remove('selected');
+        }
+    });
 }
 
 // Save portfolio
@@ -296,7 +360,8 @@ async function savePortfolio() {
             address: document.getElementById('portfolioAddress').value,
             description: document.getElementById('portfolioDescription').value,
             details: [],
-            images: []
+            images: [],
+            featured_image_order: document.querySelector('input[name="featuredImage"]:checked')?.value || 0
         };
         
         // Collect details

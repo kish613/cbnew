@@ -139,10 +139,11 @@ async function createPortfolio(req, res) {
   try {
     // Insert portfolio
     const [newPortfolio] = await sql`
-      INSERT INTO portfolios (portfolio_id, title, category, location, type, address, description, display_order)
+      INSERT INTO portfolios (portfolio_id, title, category, location, type, address, description, display_order, featured_image_order)
       VALUES (${portfolio.id}, ${portfolio.title}, ${portfolio.category}, ${portfolio.location}, 
               ${portfolio.type || null}, ${portfolio.address || null}, ${portfolio.description}, 
-              (SELECT COALESCE(MAX(display_order), -1) + 1 FROM portfolios WHERE category = ${portfolio.category}))
+              (SELECT COALESCE(MAX(display_order), -1) + 1 FROM portfolios WHERE category = ${portfolio.category}),
+              ${portfolio.featured_image_order || 0})
       RETURNING *
     `;
     
@@ -191,7 +192,8 @@ async function updatePortfolio(req, res) {
           location = ${portfolio.location},
           type = ${portfolio.type || null},
           address = ${portfolio.address || null},
-          description = ${portfolio.description}
+          description = ${portfolio.description},
+          featured_image_order = ${portfolio.featured_image_order || 0}
       WHERE portfolio_id = ${portfolio.id}
       RETURNING *
     `;

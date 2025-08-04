@@ -45,9 +45,14 @@
             // Clear existing images
             modalGrid.innerHTML = '';
             
+            // Reorder images based on featured_image_order
+            const displayImages = window.reorderImagesForDisplay ? 
+                window.reorderImagesForDisplay(portfolioData.images, portfolioData.featured_image_order) : 
+                portfolioData.images;
+            
             // Add all images
-            if (portfolioData.images && portfolioData.images.length > 0) {
-                portfolioData.images.forEach((image, index) => {
+            if (displayImages && displayImages.length > 0) {
+                displayImages.forEach((image, index) => {
                     const imageItem = document.createElement('div');
                     imageItem.className = 'portfolio-modal__item';
                     
