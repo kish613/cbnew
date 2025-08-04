@@ -145,6 +145,12 @@
                                     Fully Let
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -187,6 +193,12 @@
                                     <i class="ri-tools-line"></i>
                                     Value-Add Opportunity
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -246,6 +258,12 @@
                                     <i class="ri-settings-line"></i>
                                     In-House Management
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -331,6 +349,12 @@
                                     Freehold
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -403,6 +427,12 @@
                                     Freehold
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -447,6 +477,12 @@
                                     <i class="ri-home-4-line"></i>
                                     Freehold
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1210,40 +1246,56 @@
                 });
             });
             
-            // Add click handlers for commercial portfolio "See More" buttons
-            const commercialSeeMoreButtons = document.querySelectorAll('#commercial .portfolio-item__see-more-btn');
-            
-            commercialSeeMoreButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const portfolioItem = this.closest('.portfolio-item');
-                    const title = portfolioItem.querySelector('.portfolio-item__title').textContent;
-                    const location = portfolioItem.querySelector('.portfolio-item__location').textContent;
-                    const description = portfolioItem.querySelector('.portfolio-item__description').textContent;
-                    
-                    // Gather all images from this item
-                    const images = [];
-                    const imgElements = portfolioItem.querySelectorAll('.portfolio-item__image img');
-                    
-                    imgElements.forEach((img) => {
-                        images.push({
-                            url: img.src,
-                            alt: img.alt
-                        });
-                    });
-                    
-                    // Open modal with portfolio data
-                    if (window.openPortfolioModal) {
-                        window.openPortfolioModal({
-                            title: title,
-                            location: location,
-                            description: description,
-                            images: images
-                        });
-                    }
+            // Function to initialize See More button handlers
+            window.initializeSeeMoreButtons = function() {
+                const seeMoreButtons = document.querySelectorAll('.portfolio-item__see-more-btn');
+                
+                seeMoreButtons.forEach(button => {
+                    // Remove any existing event listeners
+                    button.replaceWith(button.cloneNode(true));
                 });
-            });
+                
+                // Re-query after replacing to get fresh references
+                const freshButtons = document.querySelectorAll('.portfolio-item__see-more-btn');
+                
+                freshButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const portfolioItem = this.closest('.portfolio-item');
+                        const title = portfolioItem.querySelector('.portfolio-item__title').textContent;
+                        const location = portfolioItem.querySelector('.portfolio-item__location').textContent;
+                        const description = portfolioItem.querySelector('.portfolio-item__description')?.textContent || '';
+                        
+                        // Gather all images from this item
+                        const images = [];
+                        const imgElements = portfolioItem.querySelectorAll('.portfolio-item__image img');
+                        
+                        imgElements.forEach((img) => {
+                            images.push({
+                                url: img.src,
+                                alt: img.alt
+                            });
+                        });
+                        
+                        // Open modal with portfolio data
+                        if (window.openPortfolioModal) {
+                            window.openPortfolioModal({
+                                title: title,
+                                location: location,
+                                description: description,
+                                images: images
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize See More buttons on page load
+            initializeSeeMoreButtons();
+            
+            // Reinitialize after portfolio data loads (for dynamically loaded content)
+            setTimeout(initializeSeeMoreButtons, 1000);
             
         });
     </script>

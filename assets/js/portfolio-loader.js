@@ -39,6 +39,11 @@
         if (commercialGrid && portfolioData.commercial) {
             updatePortfolioSection(commercialGrid, portfolioData.commercial, 'commercial');
         }
+        
+        // Initialize See More buttons after loading portfolio data
+        if (typeof initializeSeeMoreButtons === 'function') {
+            setTimeout(initializeSeeMoreButtons, 100);
+        }
     });
     
     function updatePortfolioSection(gridElement, portfolios, category) {
@@ -116,6 +121,12 @@
                             ${detail.text}
                         </span>`
                     ).join('')}
+                </div>
+                <div class="portfolio-item__see-more">
+                    <button class="portfolio-item__see-more-btn">
+                        See More
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
                 </div>
             </div>
         `;
