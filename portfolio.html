@@ -509,6 +509,12 @@
                                     Iconic Location
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -549,6 +555,12 @@
                                     <i class="ri-flashlight-line"></i>
                                     Includes Substation
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -595,6 +607,12 @@
                                     Freehold
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -636,6 +654,12 @@
                                     <i class="ri-map-pin-line"></i>
                                     Town Centre
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -682,6 +706,12 @@
                                     Multi-Level
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -722,6 +752,12 @@
                                     <i class="ri-star-line"></i>
                                     Lord Street
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -775,6 +811,12 @@
                                     £401,550 p.a.
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -821,6 +863,12 @@
                                     £109,029 p.a.
                                 </span>
                             </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -864,6 +912,12 @@
                                     <i class="ri-map-pin-2-line"></i>
                                     Next to Primark
                                 </span>
+                            </div>
+                            <div class="portfolio-item__see-more">
+                                <button class="portfolio-item__see-more-btn">
+                                    See More
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1150,6 +1204,41 @@
                         window.openPortfolioModal({
                             title: title,
                             location: location,
+                            images: images
+                        });
+                    }
+                });
+            });
+            
+            // Add click handlers for commercial portfolio "See More" buttons
+            const commercialSeeMoreButtons = document.querySelectorAll('#commercial .portfolio-item__see-more-btn');
+            
+            commercialSeeMoreButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const portfolioItem = this.closest('.portfolio-item');
+                    const title = portfolioItem.querySelector('.portfolio-item__title').textContent;
+                    const location = portfolioItem.querySelector('.portfolio-item__location').textContent;
+                    const description = portfolioItem.querySelector('.portfolio-item__description').textContent;
+                    
+                    // Gather all images from this item
+                    const images = [];
+                    const imgElements = portfolioItem.querySelectorAll('.portfolio-item__image img');
+                    
+                    imgElements.forEach((img) => {
+                        images.push({
+                            url: img.src,
+                            alt: img.alt
+                        });
+                    });
+                    
+                    // Open modal with portfolio data
+                    if (window.openPortfolioModal) {
+                        window.openPortfolioModal({
+                            title: title,
+                            location: location,
+                            description: description,
                             images: images
                         });
                     }

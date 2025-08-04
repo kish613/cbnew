@@ -2253,6 +2253,40 @@ button {
   margin-top: auto;
 }
 
+.portfolio-item__see-more {
+  margin-top: 1.5rem;
+}
+
+.portfolio-item__see-more-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portfolio-item__see-more-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 43, 61, 0.15);
+}
+
+.portfolio-item__see-more-btn i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item__see-more-btn:hover i {
+  transform: translateX(3px);
+}
+
 .portfolio-item__detail {
   display: flex;
   align-items: center;
