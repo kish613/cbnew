@@ -67,6 +67,16 @@
             }
         });
         
+        // Modify descriptions for regional portfolios to mention individually purchased properties
+        let displayDescription = portfolio.description;
+        if (portfolio.title === "London Portfolio") {
+            displayDescription = "This selection represents just a sample of our numerous individually acquired properties across London. " + portfolio.description;
+        } else if (portfolio.title === "Midlands Portfolio") {
+            displayDescription = "Featured here are several of the many properties we've purchased individually throughout the Midlands region. " + portfolio.description;
+        } else if (portfolio.title === "North West Portfolio") {
+            displayDescription = "These properties showcase a portion of our extensive individual acquisitions in the North West. " + portfolio.description;
+        }
+        
         // Check if this is the "Properties Bought Individually" portfolio
         const isIndividualProperties = portfolio.title === "Properties Bought Individually";
         
@@ -142,7 +152,7 @@
             <div class="portfolio-item__content">
                 <h3 class="portfolio-item__title">${portfolio.title}</h3>
                 <p class="portfolio-item__location">${portfolio.address || portfolio.location}</p>
-                <p class="portfolio-item__description">${portfolio.description || ''}</p>
+                <p class="portfolio-item__description">${displayDescription || ''}</p>
                 <a href="#" class="portfolio-item__read-more">Read more</a>
                 <div class="portfolio-item__details">
                     ${portfolio.details.map(detail => 
