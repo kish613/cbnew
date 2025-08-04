@@ -2135,22 +2135,11 @@ button {
 }
 
 .portfolio-item__overlay::after {
-  content: 'Click to View Gallery';
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent-color);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 2rem;
-  font-weight: var(--font-medium);
-  font-size: var(--small-font-size);
-  white-space: nowrap;
+  display: none; /* Removed since we use See More buttons */
 }
 
 .portfolio-item:hover .portfolio-item__overlay {
-  opacity: 1;
+  opacity: 0; /* Disabled since we use See More buttons */
 }
 
 .portfolio-item__overlay .portfolio-item__info {
@@ -2255,6 +2244,8 @@ button {
 
 .portfolio-item__see-more {
   margin-top: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .portfolio-item__see-more-btn {
@@ -2270,6 +2261,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .portfolio-item__see-more-btn:hover {
@@ -2294,6 +2287,11 @@ button {
 
 .portfolio-item:has(.portfolio-gallery--with-address) .portfolio-item__overlay::after {
   display: none;
+}
+
+/* Prevent overlay from appearing on hover for individual properties */
+.portfolio-item:has(.portfolio-gallery--with-address):hover .portfolio-item__overlay {
+  opacity: 0 !important;
 }
 
 .portfolio-item__detail {
