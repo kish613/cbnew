@@ -170,7 +170,7 @@ function loadDefaultPortfolios() {
                 location: "Birmingham",
                 type: "Mixed Use",
                 address: "",
-                description: "Large mixed-use portfolio in Birmingham featuring residential units above commercial spaces. Prime city locations with excellent rental yields.",
+                description: "Large mixed-use portfolio in Birmingham generating £455,156 annually. Features residential units above commercial spaces in prime city locations with excellent rental yields.",
                 details: [
                     { icon: "ri-building-line", text: "28 Units" },
                     { icon: "ri-map-pin-line", text: "Birmingham City" },
@@ -275,7 +275,7 @@ function loadDefaultPortfolios() {
                 location: "Accrington, Lancashire",
                 type: "Retail Parade",
                 address: "Church Street, Accrington, BB5",
-                description: "Prime retail parade in Accrington town center featuring national retailers and local businesses. High footfall location with excellent transport links.",
+                description: "Prime retail parade in Accrington town center generating £57,000 annually. Features national retailers and local businesses with high footfall location and excellent transport links.",
                 details: [
                     { icon: "ri-store-2-line", text: "8 Retail Units" },
                     { icon: "ri-map-pin-line", text: "Town Centre" },
@@ -313,7 +313,7 @@ function loadDefaultPortfolios() {
                 location: "Cheltenham",
                 type: "Town Centre Retail",
                 address: "High Street, Cheltenham, GL50",
-                description: "Victorian retail parade in affluent Cheltenham town center. Mix of boutique shops, cafes, and professional services. Strong covenant tenants.",
+                description: "Victorian retail parade in affluent Cheltenham town center generating £187,500 annually. Mix of boutique shops, cafes, and professional services with strong covenant tenants.",
                 details: [
                     { icon: "ri-store-2-line", text: "12 Units" },
                     { icon: "ri-map-pin-line", text: "Town Centre" },
@@ -331,7 +331,7 @@ function loadDefaultPortfolios() {
                 location: "Eastbourne",
                 type: "Multi-Level Retail",
                 address: "Terminus Road, Eastbourne, BN21",
-                description: "Modern multi-level retail development in Eastbourne town center. Anchor tenants include national chains with long-term leases.",
+                description: "Modern multi-level retail development in Eastbourne town center generating £310,400 annually. Anchor tenants include national chains with long-term leases.",
                 details: [
                     { icon: "ri-building-2-line", text: "Multi-Level" },
                     { icon: "ri-map-pin-line", text: "Eastbourne Centre" },
@@ -351,7 +351,7 @@ function loadDefaultPortfolios() {
                 location: "Southport",
                 type: "Grade II Listed Retail",
                 address: "Lord Street, Southport, PR8",
-                description: "Historic Grade II listed Victorian shopping arcade on Lord Street. Premium retail destination with unique architectural features.",
+                description: "Historic Grade II listed Victorian shopping arcade on Lord Street generating £98,000 annually. Premium retail destination with unique architectural features.",
                 details: [
                     { icon: "ri-building-4-line", text: "Grade II Listed" },
                     { icon: "ri-map-pin-line", text: "Lord Street" },
@@ -369,7 +369,7 @@ function loadDefaultPortfolios() {
                 location: "Barry, Wales",
                 type: "High Street Retail",
                 address: "Holton Road, Barry, CF63",
-                description: "Established retail parade on Barry's main shopping street. Mix of national chains and independent retailers serving the local community.",
+                description: "Established retail parade on Barry's main shopping street generating an annual income of £401,550. Mix of national chains and independent retailers serving the local community.",
                 details: [
                     { icon: "ri-store-2-line", text: "15 Shops" },
                     { icon: "ri-map-pin-line", text: "Holton Road" },
@@ -392,7 +392,7 @@ function loadDefaultPortfolios() {
                 location: "Nottingham",
                 type: "Supermarket Investment",
                 address: "Upper Parliament Street, Nottingham, NG1",
-                description: "Long-leasehold Tesco Express with residential units above. Prime city center location with strong footfall and secure rental income.",
+                description: "Long-leasehold Tesco Express with residential units above generating £109,029 annually. Prime city center location with strong footfall and secure rental income.",
                 details: [
                     { icon: "ri-shopping-cart-line", text: "Tesco Express" },
                     { icon: "ri-map-pin-line", text: "Upper Parliament" },
@@ -412,7 +412,7 @@ function loadDefaultPortfolios() {
                 location: "Nottingham City Centre",
                 type: "Historic Retail",
                 address: "Long Row, Nottingham, NG1 2DZ",
-                description: "Premium retail units on Nottingham's historic Long Row, the city's main shopping thoroughfare. Features period architecture with modern retail spaces.",
+                description: "Premium retail units on Nottingham's historic Long Row generating £130,000 annually. The city's main shopping thoroughfare featuring period architecture with modern retail spaces.",
                 details: [
                     { icon: "ri-store-2-line", text: "Premium Retail" },
                     { icon: "ri-map-pin-line", text: "Long Row" },
