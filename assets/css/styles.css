@@ -1090,49 +1090,8 @@ button {
   }
 }
 
-/* For medium devices */
+/* Additional responsive styles */
 @media screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background-color: var(--container-color);
-    padding: 2rem 1rem;
-    transition: var(--transition);
-    z-index: var(--z-fixed);
-  }
-
-  .nav__list {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .nav__link {
-    font-size: var(--h3-font-size);
-  }
-
-  .nav__close,
-  .nav__toggle {
-    display: block;
-  }
-
-  .nav__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-  }
-
-  .show-menu {
-    left: 0;
-  }
-
-  .nav__phone span {
-    display: none;
-  }
-
   .home__stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;

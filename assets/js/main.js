@@ -518,24 +518,28 @@ function hideValidationMessage(input) {
 }
 
 /*=============== MOBILE MENU IMPROVEMENTS ===============*/
-const navToggleBtn = document.getElementById('nav-toggle');
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu && navToggle && !navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('show-menu')) {
+        navMenu.classList.remove('show-menu');
+        document.body.classList.remove('menu-open');
+    }
+});
 
-if (navToggleBtn && navMenu) {
-    navToggleBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('show-menu');
-        navToggleBtn.classList.toggle('active');
-        
-        // Prevent body scroll when menu is open
-        document.body.classList.toggle('menu-open');
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !navToggleBtn.contains(e.target)) {
-            navMenu.classList.remove('show-menu');
-            navToggleBtn.classList.remove('active');
-            document.body.classList.remove('menu-open');
+// Prevent body scroll when menu is open
+if (navToggle) {
+    const originalToggleHandler = navToggle.onclick;
+    navToggle.addEventListener('click', () => {
+        if (navMenu.classList.contains('show-menu')) {
+            document.body.classList.add('menu-open');
         }
+    });
+}
+
+if (navClose) {
+    const originalCloseHandler = navClose.onclick;
+    navClose.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
     });
 }
 
