@@ -1471,19 +1471,24 @@ button {
   position: relative;
 }
 
-.portfolio-item__image--gallery img {
+.portfolio-item__image--gallery img,
+.portfolio-item__image--gallery .portfolio-image-wrapper {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.portfolio-item__image--gallery img.active {
+.portfolio-item__image--gallery img.active,
+.portfolio-item__image--gallery .portfolio-image-wrapper.active {
   opacity: 1;
 }
 
-.portfolio-item__image--gallery img:first-child {
+.portfolio-item__image--gallery img:first-child,
+.portfolio-item__image--gallery .portfolio-image-wrapper:first-child {
   opacity: 1;
 }
 
