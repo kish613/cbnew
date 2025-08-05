@@ -22,7 +22,10 @@
       "Bash(npm run dev:*)",
       "Bash(npx http-server:*)",
       "Bash(ls:*)",
-      "Bash(npm run migrate:*)"
+      "Bash(npm run migrate:*)",
+      "Bash(start index.html)",
+      "Bash(cp:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
