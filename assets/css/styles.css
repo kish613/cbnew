@@ -3720,7 +3720,7 @@ button {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.portfolio-modal__item img {
+.portfolio-modal__item > img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -3752,13 +3752,13 @@ button {
 .portfolio-modal__image-wrapper {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 100%;
   overflow: hidden;
 }
 
 .portfolio-modal__image-wrapper img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
   display: block;
 }
