@@ -52,12 +52,17 @@
             
             // Add all images
             if (displayImages && displayImages.length > 0) {
+                console.log('Portfolio:', portfolioData.title);
+                console.log('Images data:', displayImages);
+                
                 displayImages.forEach((image, index) => {
+                    console.log(`Image ${index}:`, image);
                     const imageItem = document.createElement('div');
                     imageItem.className = 'portfolio-modal__item';
                     
                     // Create wrapper for image and label if needed
                     if (image.show_label && image.address) {
+                        console.log(`Adding label for image ${index}: ${image.address}`);
                         const wrapper = document.createElement('div');
                         wrapper.className = 'portfolio-modal__image-wrapper';
                         
@@ -80,12 +85,6 @@
                         img.loading = 'lazy';
                         imageItem.appendChild(img);
                     }
-                    
-                    const info = document.createElement('div');
-                    info.className = 'portfolio-modal__item-info';
-                    info.innerHTML = `<p class="portfolio-modal__item-alt">${image.alt || ''}</p>`;
-                    
-                    imageItem.appendChild(info);
                     
                     // Click to view full size
                     imageItem.addEventListener('click', function() {
