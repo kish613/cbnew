@@ -20,10 +20,13 @@ async function fixAllCommercialFinal() {
         {
             title: "Brown Portfolio",
             images: [
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1749656104/BB5_3_mjod1a.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1750421133/Screenshot_2025-06-06_at_17.39.12_pcslj5.png", alt: "Brown Portfolio - Mixed Use Collection" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1750421132/Screenshot_2025-06-06_at_17.38.48_ucrkci.png", alt: "Brown Portfolio - Mixed Use Collection" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1750421156/Screenshot_2025-06-06_at_17.40.30_ysv5st.png", alt: "Brown Portfolio - Mixed Use Collection" }
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384332/48_v4gvu9.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384333/49_pbexac.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384320/39_qnosuc.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384311/32_srz9ju.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384305/27_bzpphg.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384278/10_vn2var.jpg", alt: "Brown Portfolio - Mixed Use Collection" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384296/21_yci8qq.jpg", alt: "Brown Portfolio - Mixed Use Collection" }
             ]
         },
         {
@@ -44,10 +47,10 @@ async function fixAllCommercialFinal() {
         {
             title: "Eastbourne Parade",
             images: [
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890909/portfolio_by_abby__image7_cayxcj.png", alt: "Eastbourne Parade - Multi-Level Retail" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image21_rsvjxq.png", alt: "Eastbourne Parade - Multi-Level Retail" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image19_kxysqy.png", alt: "Eastbourne Parade - Multi-Level Retail" },
-                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image17_wrlmkc.png", alt: "Eastbourne Parade - Multi-Level Retail" }
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384175/4_dquvnu.jpg", alt: "Eastbourne Parade - Multi-Level Retail" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384175/3_shzqxz.jpg", alt: "Eastbourne Parade - Multi-Level Retail" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384186/12_ptus5z.jpg", alt: "Eastbourne Parade - Multi-Level Retail" },
+                { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384258/23_c23095.jpg", alt: "Eastbourne Parade - Multi-Level Retail" }
             ]
         },
         {
@@ -127,7 +130,7 @@ async function fixAllCommercialFinal() {
         console.log(`Total commercial images updated: ${totalImagesUpdated}`);
         console.log(`\nCommercial portfolio image counts:`);
         console.log(`- Accrington Parade: 2 images`);
-        console.log(`- Brown Portfolio: 4 images`);
+        console.log(`- Brown Portfolio: 7 images`);
         console.log(`- Tower Bridge Quarter: 3 images`);
         console.log(`- Cheltenham Parade: 2 images`);
         console.log(`- Eastbourne Parade: 4 images`);

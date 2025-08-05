@@ -177,8 +177,13 @@ function loadDefaultPortfolios() {
                     { icon: "ri-store-2-line", text: "Mixed Use" }
                 ],
                 images: [
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1749656104/BB5_3_mjod1a.jpg", alt: "Brown Portfolio - Mixed Use" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1749656104/BB4_1_v4fjcg.jpg", alt: "Brown Portfolio - Birmingham Properties" }
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384332/48_v4gvu9.jpg", alt: "Brown Portfolio - Mixed Use" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384333/49_pbexac.jpg", alt: "Brown Portfolio - Birmingham Properties" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384320/39_qnosuc.jpg", alt: "Brown Portfolio - Commercial Space" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384311/32_srz9ju.jpg", alt: "Brown Portfolio - Retail Unit" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384305/27_bzpphg.jpg", alt: "Brown Portfolio - Property View" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384278/10_vn2var.jpg", alt: "Brown Portfolio - Building Exterior" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384296/21_yci8qq.jpg", alt: "Brown Portfolio - Street View" }
                 ]
             },
             {
@@ -195,9 +200,16 @@ function loadDefaultPortfolios() {
                     { icon: "ri-vip-crown-line", text: "Premium Grade" }
                 ],
                 images: [
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869655/20220831_164644_rsfmck.jpg", alt: "London Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869650/20220907_121505_m6corj.jpg", alt: "London Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/dji_mimo_20220913_124418_16_1663597550044_photo_jmswwh.jpg", alt: "London Portfolio - Residential Properties" }
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056353/0_sqbh8z.jpg", alt: "38 Ladbrook Road, London", address: "38 Ladbrook Road, London, SE25 6QD" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056353/1_swez7b.jpg", alt: "3 Tranmere Road, Edmonton", address: "3 Tranmere Road, Edmonton, London, N9 9EJ" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056353/2_whspyj.jpg", alt: "78 Long Lane, Addiscombe", address: "78 Long Lane, Addiscombe, London, CR0 7AP" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/3_s0ye02.jpg", alt: "30 Pitchford Street", address: "30 Pitchford Street, London, E15 4RX" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/4_vdq81a.jpg", alt: "3 Ulverston Road, Walthamstow", address: "3 Ulverston Road, Walthamstow, London, E17 4BN" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/5_oayrve.jpg", alt: "677A London Road, Thornton Heath", address: "677A London Road, Thornton Heath, CR7 6AZ" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/6_rrjhnu.jpg", alt: "183 Kempton Road", address: "183 Kempton Road, London, E6 2PD" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/7_vjfynr.jpg", alt: "119 Boston Road, Croydon", address: "119 Boston Road, Croydon, CR0 3EH" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056354/8_fia5z5.jpg", alt: "11 Salisbury Road", address: "11 Salisbury Road, London, E4 6TA" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056355/9_pficfj.jpg", alt: "44 Retford Road, Romford", address: "44 Retford Road, Romford, RM3 9NB" }
                 ]
             },
             {
@@ -214,9 +226,16 @@ function loadDefaultPortfolios() {
                     { icon: "ri-home-heart-line", text: "Family Homes" }
                 ],
                 images: [
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869654/20220831_124356_sqnqj2.jpg", alt: "Midlands Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869653/20220830_154535_aywhp5.jpg", alt: "Midlands Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869651/20221007_135159_ljgp7y.jpg", alt: "Midlands Portfolio - Residential Properties" }
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056401/0_w1z5et.jpg", alt: "98 Condover Road, Birmingham", address: "98 Condover Road, Birmingham, West Midlands, B31 3QX" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056401/1_ziknpn.jpg", alt: "89 Honiton Crescent, Birmingham", address: "89 Honiton Crescent, Birmingham, West Midlands, B31" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/2_lf47ji.jpg", alt: "197 Field Road, Bloxwich", address: "197 Field Road, Bloxwich, Walsall, West Midlands, WS3 3NA" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/3_hdv15s.jpg", alt: "106 Cheverton Road, Birmingham", address: "106 Cheverton Road, Birmingham, West Midlands, B31 1RT" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/4_srljfn.jpg", alt: "4 Rowland Gardens, Walsall", address: "4 Rowland Gardens, WALSALL, West Midlands, WS2 8UL" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056403/5_b1udmb.jpg", alt: "25 Lower Valley Road, Brierley Hill", address: "25 Lower Valley Road, Brierley Hill, West Midlands, DY5 3NP" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056403/6_o6zvhg.jpg", alt: "70 Rutherford Road, Walsall", address: "70 Rutherford Road, Beechdale, Walsall, West Midlands, WS2 7JQ" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056404/7_tweooh.jpg", alt: "210 Jiggins Lane, Birmingham", address: "210 Jiggins Lane, Birmingham, West Midlands, B32 3ER" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056405/8_k79nsu.jpg", alt: "16 Tipton Road, Dudley", address: "16 Tipton Road, DUDLEY, West Midlands, DY1 4SH" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056405/9_cbc41k.jpg", alt: "11 Wills Avenue, West Bromwich", address: "11 Wills Avenue, West Bromwich, West Midlands, B71 2QS" }
                 ]
             },
             {
@@ -233,9 +252,16 @@ function loadDefaultPortfolios() {
                     { icon: "ri-community-line", text: "Community Focus" }
                 ],
                 images: [
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/DJI_20220721_160904_038_lvb2kk.jpg", alt: "North West Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869661/IMG_2934_w4r7nn.jpg", alt: "North West Portfolio - Residential Properties" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753721219/20220810_133732_Original_2_lr7xen.jpg", alt: "North West Portfolio - Residential Properties" }
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753972570/48_worsley_road_sJHUDn_mr9hib.jpg", alt: "48 Worsley Road North, Manchester", address: "48 Worsley Road North, Manchester, M28 3GW" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753972574/5_bela_sJHUDn_ej77zi.jpg", alt: "5 Bela Grove, Blackpool", address: "5 Bela Grove, Blackpool, FY1 5JZ" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753972559/16_sissons_sJHUDn_as8ryp.jpg", alt: "16 Sissons Crescent, Leeds", address: "16 Sissons Crescent, Leeds, LS10 4LN" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753972565/12_bright_sJHUDn_hqp51y.jpg", alt: "12 Bright Street, Bradford", address: "12 Bright Street, Bradford, BD15 7QT" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056356/Liverpool-Property-_1_.jpg", alt: "81 Grane Road, Liverpool", address: "81 Grane Road, Liverpool, BB4 4LR" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/DJI_20220721_160904_038_lvb2kk.jpg", alt: "North West Portfolio - Aerial View" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753869661/IMG_2934_w4r7nn.jpg", alt: "North West Portfolio - Street View" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1753721219/20220810_133732_Original_2_lr7xen.jpg", alt: "North West Portfolio - Property View" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056407/10_vusklp.jpg", alt: "North West Portfolio - Manchester Area" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754056408/11_iwhdlp.jpg", alt: "North West Portfolio - Liverpool Area" }
                 ]
             },
             {
@@ -338,10 +364,10 @@ function loadDefaultPortfolios() {
                     { icon: "ri-time-line", text: "Long Leases" }
                 ],
                 images: [
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890909/portfolio_by_abby__image7_cayxcj.png", alt: "Eastbourne Parade - Multi-Level" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image21_rsvjxq.png", alt: "Eastbourne Parade - Retail Units" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image19_kxysqy.png", alt: "Eastbourne Parade - Street View" },
-                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1751890908/portfolio_by_abby__image17_wrlmkc.png", alt: "Eastbourne Parade - Building" }
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384175/4_dquvnu.jpg", alt: "Eastbourne Parade - Multi-Level" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384175/3_shzqxz.jpg", alt: "Eastbourne Parade - Retail Units" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384186/12_ptus5z.jpg", alt: "Eastbourne Parade - Street View" },
+                    { url: "https://res.cloudinary.com/dmns9ystn/image/upload/v1754384258/23_c23095.jpg", alt: "Eastbourne Parade - Building" }
                 ]
             },
             {
