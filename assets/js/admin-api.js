@@ -237,25 +237,34 @@ function loadImages(images) {
     imageList.innerHTML = '';
     
     images.forEach((image, index) => {
-        addImageInput(image.url, image.alt, image.address);
+        addImageInput(image.url, image.alt, image.address, image.show_label);
     });
     
     // Update featured image selector
     updateFeaturedImageSelector();
 }
 
-function addImageInput(url = '', alt = '', address = '') {
+function addImageInput(url = '', alt = '', address = '', showLabel = false) {
     const imageList = document.getElementById('imageList');
     const imageItem = document.createElement('div');
     imageItem.className = 'image-item';
     
     const showAddressField = document.getElementById('portfolioTitle').value === "Properties Bought Individually";
+    const isCommercial = document.getElementById('portfolioCategory').value === "commercial";
+    const uniqueId = Date.now() + Math.random().toString(36).substr(2, 9);
     
     imageItem.innerHTML = `
         <input type="text" placeholder="Image URL (Cloudinary)" value="${url}" class="image-url" onchange="updateFeaturedImageSelector()">
         <input type="text" placeholder="Alt text" value="${alt}" class="image-alt">
         ${showAddressField ? 
             `<input type="text" placeholder="Address (for overlay)" value="${address || ''}" class="image-address">` : 
+            ''
+        }
+        ${isCommercial && !showAddressField ? 
+            `<div class="label-toggle">
+                <input type="checkbox" class="show-label-checkbox" id="label-${uniqueId}" ${showLabel ? 'checked' : ''}>
+                <label for="label-${uniqueId}">Show address label</label>
+            </div>` : 
             ''
         }
         <button type="button" class="btn-move-image" onclick="moveImage(this, -1)">
@@ -389,10 +398,14 @@ async function savePortfolio() {
             const url = item.querySelector('.image-url').value;
             const alt = item.querySelector('.image-alt').value;
             const addressInput = item.querySelector('.image-address');
+            const showLabelInput = item.querySelector('.show-label-checkbox');
             if (url && alt) {
                 const imageData = { url, alt };
                 if (addressInput) {
                     imageData.address = addressInput.value;
+                }
+                if (showLabelInput) {
+                    imageData.show_label = showLabelInput.checked;
                 }
                 formData.images.push(imageData);
             }

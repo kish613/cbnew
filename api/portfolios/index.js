@@ -86,6 +86,7 @@ async function getPortfolios(req, res) {
             'url', pi.url,
             'alt', pi.alt,
             'address', pi.address,
+            'show_label', pi.show_label,
             'order', pi.image_order
           )
         ) FILTER (WHERE pi.id IS NOT NULL), 
@@ -116,7 +117,7 @@ async function getPortfolios(req, res) {
     address: p.address,
     description: p.description,
     details: p.details.sort((a, b) => a.order - b.order).map(d => ({ icon: d.icon, text: d.text })),
-    images: p.images.sort((a, b) => a.order - b.order).map(i => ({ url: i.url, alt: i.alt, address: i.address }))
+    images: p.images.sort((a, b) => a.order - b.order).map(i => ({ url: i.url, alt: i.alt, address: i.address, show_label: i.show_label }))
   }));
   
   // Group by category
@@ -163,8 +164,8 @@ async function createPortfolio(req, res) {
       for (let i = 0; i < portfolio.images.length; i++) {
         const image = portfolio.images[i];
         await sql`
-          INSERT INTO portfolio_images (portfolio_id, url, alt, address, image_order)
-          VALUES (${portfolio.id}, ${image.url}, ${image.alt}, ${image.address || null}, ${i})
+          INSERT INTO portfolio_images (portfolio_id, url, alt, address, show_label, image_order)
+          VALUES (${portfolio.id}, ${image.url}, ${image.alt}, ${image.address || null}, ${image.show_label || false}, ${i})
         `;
       }
     }
@@ -222,8 +223,8 @@ async function updatePortfolio(req, res) {
       for (let i = 0; i < portfolio.images.length; i++) {
         const image = portfolio.images[i];
         await sql`
-          INSERT INTO portfolio_images (portfolio_id, url, alt, address, image_order)
-          VALUES (${portfolio.id}, ${image.url}, ${image.alt}, ${image.address || null}, ${i})
+          INSERT INTO portfolio_images (portfolio_id, url, alt, address, show_label, image_order)
+          VALUES (${portfolio.id}, ${image.url}, ${image.alt}, ${image.address || null}, ${image.show_label || false}, ${i})
         `;
       }
     }

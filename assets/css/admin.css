@@ -519,6 +519,27 @@ body {
     pointer-events: none;
 }
 
+/* Label toggle */
+.label-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.label-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.label-toggle label {
+    font-size: 0.875rem;
+    color: #374151;
+    cursor: pointer;
+    user-select: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .admin-nav {
