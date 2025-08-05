@@ -1238,6 +1238,31 @@
                         e.stopPropagation();
                         
                         const portfolioItem = this.closest('.portfolio-item');
+                        const description = portfolioItem.querySelector('.portfolio-item__description');
+                        
+                        if (description) {
+                            // Toggle the expanded class
+                            description.classList.toggle('expanded');
+                            
+                            // Update button text
+                            const buttonText = description.classList.contains('expanded') ? 'See Less' : 'See More';
+                            this.innerHTML = `${buttonText} <i class="ri-arrow-${description.classList.contains('expanded') ? 'up' : 'right'}-line"></i>`;
+                        }
+                    });
+                });
+            }
+            
+            // Function to open portfolio modal when clicking on the image
+            function initializePortfolioImageClicks() {
+                const portfolioImages = document.querySelectorAll('.portfolio-item__image');
+                
+                portfolioImages.forEach(imageContainer => {
+                    imageContainer.style.cursor = 'pointer';
+                    imageContainer.addEventListener('click', function(e) {
+                        // Don't trigger if clicking on a button
+                        if (e.target.closest('button')) return;
+                        
+                        const portfolioItem = this.closest('.portfolio-item');
                         const title = portfolioItem.querySelector('.portfolio-item__title').textContent;
                         const location = portfolioItem.querySelector('.portfolio-item__location').textContent;
                         const description = portfolioItem.querySelector('.portfolio-item__description')?.textContent || '';
@@ -1279,8 +1304,14 @@
             // Initialize See More buttons on page load
             initializeSeeMoreButtons();
             
+            // Initialize portfolio image clicks
+            initializePortfolioImageClicks();
+            
             // Reinitialize after portfolio data loads (for dynamically loaded content)
-            setTimeout(initializeSeeMoreButtons, 1000);
+            setTimeout(() => {
+                initializeSeeMoreButtons();
+                initializePortfolioImageClicks();
+            }, 1000);
             
         });
     </script>

@@ -1457,6 +1457,12 @@ button {
   position: relative;
   height: 250px;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item__image:hover {
+  transform: translateY(-2px);
 }
 
 .portfolio-item__image img {
@@ -2138,8 +2144,23 @@ button {
   display: none; /* Removed since we use See More buttons */
 }
 
-.portfolio-item:hover .portfolio-item__overlay {
-  opacity: 0; /* Disabled since we use See More buttons */
+.portfolio-item__image:hover .portfolio-item__overlay {
+  opacity: 1;
+}
+
+.portfolio-item__overlay::before {
+  content: "Click to View Gallery";
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--container-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
 }
 
 .portfolio-item__overlay .portfolio-item__info {
