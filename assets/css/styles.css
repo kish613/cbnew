@@ -3713,6 +3713,7 @@ button {
   background: #f5f5f5;
   cursor: pointer;
   transition: all 0.3s ease;
+  height: 250px;
 }
 
 .portfolio-modal__item:hover {
@@ -3728,19 +3729,7 @@ button {
 }
 
 .portfolio-modal__item-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  padding: 1.5rem;
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-modal__item:hover .portfolio-modal__item-info {
-  opacity: 1;
+  display: none;
 }
 
 .portfolio-modal__item-alt {
@@ -3753,7 +3742,7 @@ button {
   position: relative;
   width: 100%;
   height: 250px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .portfolio-modal__image-wrapper img {
