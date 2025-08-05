@@ -1444,8 +1444,12 @@ button {
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  height: 520px;
+  min-height: 520px;
   cursor: pointer;
+}
+
+.portfolio-item.expanded {
+  height: auto;
 }
 
 .portfolio-item:hover {
@@ -2198,6 +2202,10 @@ button {
   overflow: hidden;
 }
 
+.portfolio-item.expanded .portfolio-item__content {
+  overflow: visible;
+}
+
 .portfolio-item__content .portfolio-item__title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
@@ -2219,11 +2227,11 @@ button {
   max-height: 3.2em;
   overflow: hidden;
   position: relative;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.5s ease;
 }
 
 .portfolio-item__description.expanded {
-  max-height: none;
+  max-height: 1000px; /* Large enough for any description */
 }
 
 .portfolio-item__description.truncated::after {

@@ -171,8 +171,9 @@
                 const description = portfolioItem.querySelector('.portfolio-item__description');
                 
                 if (description) {
-                    // Toggle the expanded class
+                    // Toggle the expanded class on both elements
                     description.classList.toggle('expanded');
+                    portfolioItem.classList.toggle('expanded');
                     
                     // Update button text
                     const buttonText = description.classList.contains('expanded') ? 'See Less' : 'See More';
