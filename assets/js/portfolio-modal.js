@@ -38,8 +38,18 @@
         window.openPortfolioModal = function(portfolioData) {
             currentPortfolioData = portfolioData;
             
+            // Apply custom titles for regional portfolios
+            let displayTitle = portfolioData.title;
+            if (portfolioData.title === "London Portfolio") {
+                displayTitle = "London Properties";
+            } else if (portfolioData.title === "Midlands Portfolio") {
+                displayTitle = "Midlands Properties";
+            } else if (portfolioData.title === "North West Portfolio") {
+                displayTitle = "Northwest Properties";
+            }
+            
             // Set header info
-            modalTitle.textContent = portfolioData.title;
+            modalTitle.textContent = displayTitle;
             modalLocation.textContent = portfolioData.location || portfolioData.address;
             
             // Clear existing images
@@ -52,17 +62,12 @@
             
             // Add all images
             if (displayImages && displayImages.length > 0) {
-                console.log('Portfolio:', portfolioData.title);
-                console.log('Images data:', displayImages);
-                
                 displayImages.forEach((image, index) => {
-                    console.log(`Image ${index}:`, image);
                     const imageItem = document.createElement('div');
                     imageItem.className = 'portfolio-modal__item';
                     
                     // Create wrapper for image and label if needed
                     if (image.show_label && image.address) {
-                        console.log(`Adding label for image ${index}: ${image.address}`);
                         const wrapper = document.createElement('div');
                         wrapper.className = 'portfolio-modal__image-wrapper';
                         
