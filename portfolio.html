@@ -1329,12 +1329,14 @@
             initializeSeeMoreButtons();
             
             // Initialize portfolio image clicks
-            initializePortfolioImageClicks();
+            // DISABLED: portfolio-loader-api.js handles clicks with proper data
+            // initializePortfolioImageClicks();
             
             // Reinitialize after portfolio data loads (for dynamically loaded content)
             setTimeout(() => {
                 initializeSeeMoreButtons();
-                initializePortfolioImageClicks();
+                // DISABLED: portfolio-loader-api.js handles clicks with proper data
+                // initializePortfolioImageClicks();
                 initializePortfolioFilters();
             }, 1000);
             

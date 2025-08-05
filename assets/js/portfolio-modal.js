@@ -62,17 +62,12 @@
             
             // Add all images
             if (displayImages && displayImages.length > 0) {
-                console.log('Modal opened for:', displayTitle);
-                console.log('Portfolio data:', portfolioData);
-                console.log('First image data:', displayImages[0]);
-                
                 displayImages.forEach((image, index) => {
                     const imageItem = document.createElement('div');
                     imageItem.className = 'portfolio-modal__item';
                     
                     // Create wrapper for image and label if needed
                     if (image.show_label && image.address) {
-                        console.log(`Image ${index} has label:`, image.address);
                         const wrapper = document.createElement('div');
                         wrapper.className = 'portfolio-modal__image-wrapper';
                         

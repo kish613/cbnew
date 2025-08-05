@@ -48,9 +48,10 @@
             if (window.initializeSeeMoreButtons) {
                 window.initializeSeeMoreButtons();
             }
-            if (window.initializePortfolioImageClicks) {
-                window.initializePortfolioImageClicks();
-            }
+            // No longer needed - clicks are handled in createPortfolioItem
+            // if (window.initializePortfolioImageClicks) {
+            //     window.initializePortfolioImageClicks();
+            // }
             if (window.initializePortfolioGalleries) {
                 window.initializePortfolioGalleries();
             }
