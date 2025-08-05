@@ -724,13 +724,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*=============== PORTFOLIO GALLERY NAVIGATION ===============*/
 document.addEventListener('DOMContentLoaded', () => {
-    const galleries = document.querySelectorAll('.portfolio-gallery');
-    
-    galleries.forEach(gallery => {
-        const images = gallery.querySelectorAll('img');
-        const dots = gallery.querySelectorAll('.gallery-dot');
-        const addressOverlays = gallery.querySelectorAll('.gallery-address');
-        let currentIndex = 0;
+    // Initialize standard portfolio galleries
+    function initializeGalleries() {
+        const galleries = document.querySelectorAll('.portfolio-gallery');
+        
+        galleries.forEach(gallery => {
+            const images = gallery.querySelectorAll('img');
+            const dots = gallery.querySelectorAll('.gallery-dot');
+            const addressOverlays = gallery.querySelectorAll('.gallery-address');
+            let currentIndex = 0;
         
         // Function to show specific slide
         function showSlide(index) {
@@ -761,8 +763,76 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         
-        // Initialize first slide
-        showSlide(0);
-    });
+            // Initialize first slide
+            showSlide(0);
+        });
+    }
+    
+    // Initialize portfolio item galleries (loaded via API)
+    function initializePortfolioItemGalleries() {
+        const itemGalleries = document.querySelectorAll('.portfolio-item__image--gallery');
+        
+        itemGalleries.forEach(gallery => {
+            const images = gallery.querySelectorAll('img:not(.active)');
+            const activeImage = gallery.querySelector('img.active');
+            const wrappers = gallery.querySelectorAll('.portfolio-image-wrapper');
+            const indicators = gallery.querySelectorAll('.portfolio-gallery-indicator');
+            let currentIndex = 0;
+            
+            // Function to show specific slide
+            function showSlide(index) {
+                // Handle regular images
+                if (activeImage) {
+                    gallery.querySelectorAll('img').forEach((img, i) => {
+                        if (i === index) {
+                            img.classList.add('active');
+                            img.style.display = 'block';
+                        } else {
+                            img.classList.remove('active');
+                            img.style.display = 'none';
+                        }
+                    });
+                }
+                
+                // Handle wrapper images (with labels)
+                wrappers.forEach((wrapper, i) => {
+                    wrapper.style.display = i === index ? 'block' : 'none';
+                    if (i === index) {
+                        wrapper.classList.add('active');
+                    } else {
+                        wrapper.classList.remove('active');
+                    }
+                });
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+                
+                currentIndex = index;
+            }
+            
+            // Add click event to indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Initialize first slide
+            showSlide(0);
+        });
+    }
+    
+    // Run initializations
+    initializeGalleries();
+    initializePortfolioItemGalleries();
+    
+    // Re-initialize when portfolios are loaded via API
+    window.initializePortfolioGalleries = function() {
+        setTimeout(() => {
+            initializePortfolioItemGalleries();
+        }, 100);
+    };
 });
 

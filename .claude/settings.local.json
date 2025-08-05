@@ -25,7 +25,8 @@
       "Bash(npm run migrate:*)",
       "Bash(start index.html)",
       "Bash(cp:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
