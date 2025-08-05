@@ -3748,6 +3748,37 @@ button {
   font-weight: var(--font-medium);
 }
 
+/* Modal image wrapper and address labels */
+.portfolio-modal__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.portfolio-modal__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-modal__address-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

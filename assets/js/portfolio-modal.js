@@ -56,16 +56,35 @@
                     const imageItem = document.createElement('div');
                     imageItem.className = 'portfolio-modal__item';
                     
-                    const img = document.createElement('img');
-                    img.src = image.url;
-                    img.alt = image.alt || `${portfolioData.title} - Image ${index + 1}`;
-                    img.loading = 'lazy';
+                    // Create wrapper for image and label if needed
+                    if (image.show_label && image.address) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'portfolio-modal__image-wrapper';
+                        
+                        const img = document.createElement('img');
+                        img.src = image.url;
+                        img.alt = image.alt || `${portfolioData.title} - Image ${index + 1}`;
+                        img.loading = 'lazy';
+                        
+                        const label = document.createElement('div');
+                        label.className = 'portfolio-modal__address-label';
+                        label.textContent = image.address;
+                        
+                        wrapper.appendChild(img);
+                        wrapper.appendChild(label);
+                        imageItem.appendChild(wrapper);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = image.url;
+                        img.alt = image.alt || `${portfolioData.title} - Image ${index + 1}`;
+                        img.loading = 'lazy';
+                        imageItem.appendChild(img);
+                    }
                     
                     const info = document.createElement('div');
                     info.className = 'portfolio-modal__item-info';
-                    info.innerHTML = `<p class="portfolio-modal__item-alt">${image.alt || image.address || ''}</p>`;
+                    info.innerHTML = `<p class="portfolio-modal__item-alt">${image.alt || ''}</p>`;
                     
-                    imageItem.appendChild(img);
                     imageItem.appendChild(info);
                     
                     // Click to view full size
