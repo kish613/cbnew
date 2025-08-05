@@ -180,7 +180,7 @@ const allPortfolios = {
             location: "Lancashire",
             type: "Retail Parade",
             address: "40-48 Broadway, Accrington, Lancashire, BB5 1EW",
-            description: "A prime retail parade in the heart of Accrington. Features multiple retail units with excellent footfall and established tenants. Strategic location with strong rental yields and potential for value enhancement through active management.",
+            description: "Comprehensive retail development comprising five retail units and a substation in a prime Lancashire location with excellent footfall and accessibility. Annual income of £57,000.",
             details: [
                 { icon: "ri-store-line", text: "Retail Units" },
                 { icon: "ri-map-pin-line", text: "Town Centre" },
@@ -199,7 +199,7 @@ const allPortfolios = {
             location: "South East England",
             type: "Mixed-Use Collection",
             address: "Various South East Locations",
-            description: "A diversified portfolio of commercial properties across the South East, including retail units, office spaces, and mixed-use developments. Each property strategically located in high-growth areas with strong tenant profiles and income stability.",
+            description: "Freehold, mixed-use collection of eight properties comprising industrial, leisure, and retail assets. Nearly 80% of income secured against national tenants including Tesco, Toolstation, and Stonegate Pub Company. Annual income of £455,156.",
             details: [
                 { icon: "ri-building-2-line", text: "Mixed-Use Properties" },
                 { icon: "ri-map-pin-line", text: "South East Region" },
@@ -218,7 +218,7 @@ const allPortfolios = {
             location: "London South Bank",
             type: "Mixed-Use Development",
             address: "London's South Bank",
-            description: "Premium mixed-use development in one of London's most prestigious locations. Combines retail, office, and leisure spaces with exceptional views and transport links. A flagship commercial asset with significant rental income and capital appreciation potential.",
+            description: "Freehold mixed-use development comprising nine buildings with retail, leisure, and office spaces across 39,582 sq ft. Prime location near Tower Bridge and The Shard with established tenants including Brewdog, Foxtons, and Chestertons. Annual income of £899,875.",
             details: [
                 { icon: "ri-building-3-line", text: "Mixed-Use Development" },
                 { icon: "ri-map-pin-line", text: "South Bank" },
@@ -237,7 +237,7 @@ const allPortfolios = {
             location: "Cheltenham",
             type: "Retail & Office",
             address: "Central Cheltenham",
-            description: "Prime commercial property in the heart of Cheltenham's bustling town center. Features ground floor retail units with office spaces above. Benefits from excellent footfall in this affluent spa town and strong covenant tenants.",
+            description: "Extensive 11 unit Town Centre retail parade with office upper floors in a popular trading location in central Cheltenham with excellent footfall and visibility. Annual income of £187,500.",
             details: [
                 { icon: "ri-store-2-line", text: "Retail & Office" },
                 { icon: "ri-map-pin-line", text: "Town Centre" },
@@ -256,7 +256,7 @@ const allPortfolios = {
             location: "Eastbourne",
             type: "Multi-Level Retail",
             address: "Eastbourne",
-            description: "Multi-level retail complex in Eastbourne town center. Features a variety of retail units across multiple floors with modern facilities and excellent visibility. Strong tourist footfall supplements local trade, ensuring consistent income streams.",
+            description: "Attractive mid-terraced retail parade of seven units arranged over basement, ground, first and second floors totalling 36,508 sq ft of retail accommodation. Annual income of £310,400.",
             details: [
                 { icon: "ri-building-4-line", text: "Multi-Level Complex" },
                 { icon: "ri-map-pin-line", text: "Eastbourne Centre" },
@@ -274,7 +274,7 @@ const allPortfolios = {
             location: "Southport",
             type: "Grade II Listed",
             address: "Lord Street near Nevill Street, Southport",
-            description: "Prestigious Grade II listed commercial property on Southport's famous Lord Street. This historic parade combines architectural heritage with modern retail requirements. Features period details while offering contemporary retail spaces with strong rental income.",
+            description: "Grade II listed building in a prime spot on Lord Street, surrounded by major retailers including Caffe Nero, HSBC, and Prezzo in this prestigious shopping destination. Annual income of £98,000.",
             details: [
                 { icon: "ri-government-line", text: "Grade II Listed" },
                 { icon: "ri-map-pin-line", text: "Lord Street" },
@@ -295,7 +295,7 @@ const allPortfolios = {
             location: "Barry, South Glamorgan",
             type: "Prime Retail Parade",
             address: "117-151 Holton Road, Barry, CF63 4HP",
-            description: "Extensive retail parade on Barry's main shopping street. Multiple retail units with diverse tenant mix including national chains and local businesses. Strong footfall from local population and proximity to Barry Island tourist destination. Significant asset with stable income and enhancement opportunities.",
+            description: "Extensive retail parade on Barry's main shopping street generating £401,550 annually. Multiple retail units with diverse tenant mix including national chains and local businesses. Strong footfall from local population and proximity to Barry Island tourist destination. Significant asset with stable income and enhancement opportunities.",
             details: [
                 { icon: "ri-store-3-line", text: "Multiple Units" },
                 { icon: "ri-map-pin-line", text: "Holton Road" },
@@ -315,7 +315,7 @@ const allPortfolios = {
             location: "Nottingham City Centre",
             type: "Supermarket Investment",
             address: "19-25 Upper Parliament Street, Nottingham NG1 2AP",
-            description: "Prime city center Tesco Express investment with long-term lease to a blue-chip covenant. Located on Upper Parliament Street in the heart of Nottingham's retail core. Secure income stream from one of the UK's leading retailers with regular rent reviews.",
+            description: "Prime city center Tesco Express investment generating £109,029 annually with long-term lease to a blue-chip covenant. Located on Upper Parliament Street in the heart of Nottingham's retail core. Secure income stream from one of the UK's leading retailers with regular rent reviews.",
             details: [
                 { icon: "ri-shopping-cart-line", text: "Tesco Express" },
                 { icon: "ri-map-pin-line", text: "City Centre" },
