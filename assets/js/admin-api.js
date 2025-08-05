@@ -262,9 +262,10 @@ function addImageInput(url = '', alt = '', address = '', showLabel = false) {
         }
         ${isCommercial && !showAddressField ? 
             `<div class="label-toggle">
-                <input type="checkbox" class="show-label-checkbox" id="label-${uniqueId}" ${showLabel ? 'checked' : ''}>
+                <input type="checkbox" class="show-label-checkbox" id="label-${uniqueId}" ${showLabel ? 'checked' : ''} onchange="toggleAddressField(this)">
                 <label for="label-${uniqueId}">Show address label</label>
-            </div>` : 
+            </div>
+            <input type="text" placeholder="Address for label" value="${address || ''}" class="image-label-address" style="display: ${showLabel ? 'block' : 'none'}; margin-top: 8px;">` : 
             ''
         }
         <button type="button" class="btn-move-image" onclick="moveImage(this, -1)">
@@ -399,14 +400,24 @@ async function savePortfolio() {
             const alt = item.querySelector('.image-alt').value;
             const addressInput = item.querySelector('.image-address');
             const showLabelInput = item.querySelector('.show-label-checkbox');
+            const labelAddressInput = item.querySelector('.image-label-address');
+            
             if (url && alt) {
                 const imageData = { url, alt };
+                
+                // Handle address based on portfolio type
                 if (addressInput) {
+                    // For "Properties Bought Individually"
                     imageData.address = addressInput.value;
+                } else if (showLabelInput && showLabelInput.checked && labelAddressInput) {
+                    // For commercial portfolios with label enabled
+                    imageData.address = labelAddressInput.value;
                 }
+                
                 if (showLabelInput) {
                     imageData.show_label = showLabelInput.checked;
                 }
+                
                 formData.images.push(imageData);
             }
         });
@@ -548,6 +559,17 @@ async function handleDrop(e) {
 
 function handleDragEnd(e) {
     this.classList.remove('dragging');
+}
+
+// Toggle address field visibility
+function toggleAddressField(checkbox) {
+    const addressField = checkbox.parentElement.nextElementSibling;
+    if (addressField && addressField.classList.contains('image-label-address')) {
+        addressField.style.display = checkbox.checked ? 'block' : 'none';
+        if (!checkbox.checked) {
+            addressField.value = ''; // Clear address when unchecked
+        }
+    }
 }
 
 // Generate unique ID

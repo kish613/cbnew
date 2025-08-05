@@ -540,6 +540,22 @@ body {
     user-select: none;
 }
 
+.image-label-address {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background-color: #f9fafb;
+    transition: all 0.2s;
+}
+
+.image-label-address:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: white;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .admin-nav {

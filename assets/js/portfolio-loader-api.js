@@ -131,12 +131,12 @@
                     // Standard gallery with images directly in portfolio-item__image
                     displayImages.forEach((img, index) => {
                         // Check if this is a commercial portfolio with label enabled
-                        const showLabel = category === 'commercial' && img.show_label && portfolio.address;
+                        const showLabel = category === 'commercial' && img.show_label && img.address;
                         
                         if (showLabel) {
                             galleryHTML += `<div class="portfolio-image-wrapper${index === 0 ? ' active' : ''}" style="${index > 0 ? 'display: none;' : ''}">
                                 <img src="${img.url}" alt="${img.alt}" loading="lazy">
-                                <div class="portfolio-image-label">${portfolio.address}</div>
+                                <div class="portfolio-image-label">${img.address}</div>
                             </div>`;
                         } else {
                             galleryHTML += `<img src="${img.url}" alt="${img.alt}" loading="lazy"${index === 0 ? ' class="active"' : ''}>`; 
