@@ -80,13 +80,13 @@
         // Custom titles for regional portfolios
         if (portfolio.title === "London Portfolio") {
             displayTitle = "London Properties";
-            displayDescription = "This selection represents just a sample of our numerous individually acquired properties across London. " + portfolio.description;
+            displayDescription = "These properties represent just a small selection from the thousands of individual acquisitions we've made across London's diverse boroughs and neighborhoods. " + portfolio.description;
         } else if (portfolio.title === "Midlands Portfolio") {
             displayTitle = "Midlands Properties";
-            displayDescription = "Featured here are several of the many properties we've purchased individually throughout the Midlands region. " + portfolio.description;
+            displayDescription = "Featured here are a handful of examples from our portfolio of several thousand properties purchased individually throughout the Midlands region. " + portfolio.description;
         } else if (portfolio.title === "North West Portfolio") {
             displayTitle = "Northwest Properties";
-            displayDescription = "These properties showcase a portion of our extensive individual acquisitions in the North West. " + portfolio.description;
+            displayDescription = "This collection showcases a few representative properties from the thousands of strategic acquisitions we've completed across the North West. " + portfolio.description;
         }
         
         // Check if this is the "Properties Bought Individually" portfolio
