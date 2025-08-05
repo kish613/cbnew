@@ -57,16 +57,6 @@
         item.className = 'portfolio-item';
         item.setAttribute('data-category', category);
         
-        // Add click handler to open modal
-        item.addEventListener('click', function(e) {
-            // Don't open modal if clicking on see more button or its children
-            if (!e.target.closest('.portfolio-item__see-more-btn') && !e.target.closest('.portfolio-item__see-more')) {
-                if (window.openPortfolioModal) {
-                    window.openPortfolioModal(portfolio);
-                }
-            }
-        });
-        
         // Modify descriptions for regional portfolios to mention individually purchased properties
         let displayDescription = portfolio.description;
         if (portfolio.title === "London Portfolio") {
@@ -170,12 +160,35 @@
             </div>
         `;
         
-        // Add see more button handler
+        // Add see more button handler to expand description
         const seeMoreBtn = item.querySelector('.portfolio-item__see-more-btn');
         if (seeMoreBtn) {
             seeMoreBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
+                
+                const portfolioItem = this.closest('.portfolio-item');
+                const description = portfolioItem.querySelector('.portfolio-item__description');
+                
+                if (description) {
+                    // Toggle the expanded class
+                    description.classList.toggle('expanded');
+                    
+                    // Update button text
+                    const buttonText = description.classList.contains('expanded') ? 'See Less' : 'See More';
+                    this.innerHTML = `${buttonText} <i class="ri-arrow-${description.classList.contains('expanded') ? 'up' : 'right'}-line"></i>`;
+                }
+            });
+        }
+        
+        // Add click handler to image to open modal
+        const imageContainer = item.querySelector('.portfolio-item__image');
+        if (imageContainer) {
+            imageContainer.style.cursor = 'pointer';
+            imageContainer.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a button
+                if (e.target.closest('button')) return;
+                
                 if (window.openPortfolioModal) {
                     window.openPortfolioModal(portfolio);
                 }
