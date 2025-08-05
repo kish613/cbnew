@@ -70,13 +70,19 @@
         item.className = 'portfolio-item';
         item.setAttribute('data-category', category);
         
-        // Modify descriptions for regional portfolios to mention individually purchased properties
+        // Modify titles and descriptions for regional portfolios
+        let displayTitle = portfolio.title;
         let displayDescription = portfolio.description;
+        
+        // Custom titles for regional portfolios
         if (portfolio.title === "London Portfolio") {
+            displayTitle = "London Properties";
             displayDescription = "This selection represents just a sample of our numerous individually acquired properties across London. " + portfolio.description;
         } else if (portfolio.title === "Midlands Portfolio") {
+            displayTitle = "Midlands Properties";
             displayDescription = "Featured here are several of the many properties we've purchased individually throughout the Midlands region. " + portfolio.description;
         } else if (portfolio.title === "North West Portfolio") {
+            displayTitle = "Northwest Properties";
             displayDescription = "These properties showcase a portion of our extensive individual acquisitions in the North West. " + portfolio.description;
         }
         
@@ -146,14 +152,14 @@
                 ${galleryHTML}
                 <div class="portfolio-item__overlay">
                     <div class="portfolio-item__info">
-                        <h3 class="portfolio-item__title">${portfolio.title}</h3>
+                        <h3 class="portfolio-item__title">${displayTitle}</h3>
                         <p class="portfolio-item__location">${portfolio.location}</p>
                         ${portfolio.type ? `<span class="portfolio-item__type">${portfolio.type}</span>` : ''}
                     </div>
                 </div>
             </div>
             <div class="portfolio-item__content">
-                <h3 class="portfolio-item__title">${portfolio.title}</h3>
+                <h3 class="portfolio-item__title">${displayTitle}</h3>
                 <p class="portfolio-item__location">${portfolio.address || portfolio.location}</p>
                 <p class="portfolio-item__description">${displayDescription || ''}</p>
                 <div class="portfolio-item__details">
