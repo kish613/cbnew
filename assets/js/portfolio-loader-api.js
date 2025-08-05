@@ -63,6 +63,11 @@
         
         // Add portfolios from API data
         portfolios.forEach(portfolio => {
+            // Skip "Properties Bought Individually" portfolio
+            if (portfolio.title === "Properties Bought Individually") {
+                return;
+            }
+            
             const portfolioItem = createPortfolioItem(portfolio, category);
             gridElement.appendChild(portfolioItem);
         });
