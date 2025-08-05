@@ -260,7 +260,7 @@ function addImageInput(url = '', alt = '', address = '', showLabel = false) {
             `<input type="text" placeholder="Address (for overlay)" value="${address || ''}" class="image-address">` : 
             ''
         }
-        ${isCommercial && !showAddressField ? 
+        ${!showAddressField ? 
             `<div class="label-toggle">
                 <input type="checkbox" class="show-label-checkbox" id="label-${uniqueId}" ${showLabel ? 'checked' : ''} onchange="toggleAddressField(this)">
                 <label for="label-${uniqueId}">Show address label</label>
