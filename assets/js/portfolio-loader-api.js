@@ -39,6 +39,19 @@
         if (commercialGrid && portfolioData.commercial) {
             updatePortfolioSection(commercialGrid, portfolioData.commercial, 'commercial');
         }
+        
+        // Reinitialize filters and other functionality after loading
+        setTimeout(() => {
+            if (window.initializePortfolioFilters) {
+                window.initializePortfolioFilters();
+            }
+            if (window.initializeSeeMoreButtons) {
+                window.initializeSeeMoreButtons();
+            }
+            if (window.initializePortfolioImageClicks) {
+                window.initializePortfolioImageClicks();
+            }
+        }, 100);
     });
     
     function updatePortfolioSection(gridElement, portfolios, category) {

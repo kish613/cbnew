@@ -1066,28 +1066,35 @@
     <script src="assets/js/main.js"></script>
     <script>
         // Portfolio filtering functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        window.initializePortfolioFilters = function() {
             const filterButtons = document.querySelectorAll('.portfolio-nav__btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
             const portfolioSections = document.querySelectorAll('.portfolio-section');
 
             filterButtons.forEach(button => {
+                // Remove existing listeners first
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+            });
+
+            // Re-query buttons after cloning
+            const freshButtons = document.querySelectorAll('.portfolio-nav__btn');
+            
+            freshButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const filter = this.getAttribute('data-filter');
                     
                     // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('portfolio-nav__btn--active'));
+                    freshButtons.forEach(btn => btn.classList.remove('portfolio-nav__btn--active'));
                     this.classList.add('portfolio-nav__btn--active');
                     
-                    // Show/hide sections and items based on filter
+                    // Show/hide sections based on filter
                     if (filter === 'all') {
+                        // Show all sections
                         portfolioSections.forEach(section => {
                             section.style.display = 'block';
                         });
-                        portfolioItems.forEach(item => {
-                            item.style.display = 'block';
-                        });
                     } else if (filter === 'residential') {
+                        // Show only residential section
                         portfolioSections.forEach(section => {
                             if (section.id === 'residential') {
                                 section.style.display = 'block';
@@ -1096,6 +1103,7 @@
                             }
                         });
                     } else if (filter === 'commercial') {
+                        // Show only commercial section
                         portfolioSections.forEach(section => {
                             if (section.id === 'commercial') {
                                 section.style.display = 'block';
@@ -1103,8 +1111,14 @@
                                 section.style.display = 'none';
                             }
                         });
+                    }
                 });
             });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize filters
+            initializePortfolioFilters();
 
             // Portfolio gallery functionality
             const galleries = document.querySelectorAll('.portfolio-item__image--gallery');
@@ -1279,7 +1293,8 @@
                         
                         // Gather all images from this item
                         const images = [];
-                        const imgElements = portfolioItem.querySelectorAll('.portfolio-item__image img');
+                        // Look for images in both regular image containers and galleries
+                        const imgElements = portfolioItem.querySelectorAll('.portfolio-item__image img, .portfolio-gallery img');
                         
                         imgElements.forEach((img) => {
                             images.push({
@@ -1312,6 +1327,7 @@
             setTimeout(() => {
                 initializeSeeMoreButtons();
                 initializePortfolioImageClicks();
+                initializePortfolioFilters();
             }, 1000);
             
         });

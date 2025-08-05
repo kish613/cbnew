@@ -320,7 +320,7 @@ function loadDefaultPortfolios() {
                 location: "London Bridge",
                 type: "Mixed Use Development",
                 address: "Tooley Street, London, SE1",
-                description: "Prestigious mixed-use development near Tower Bridge featuring retail, office, and residential units. Prime location with views of the Thames.",
+                description: "Prestigious mixed-use development near Tower Bridge featuring retail, office, and residential units generating £899,875 annually. Prime location with views of the Thames.",
                 details: [
                     { icon: "ri-building-3-line", text: "Mixed Use" },
                     { icon: "ri-map-pin-line", text: "South Bank" },

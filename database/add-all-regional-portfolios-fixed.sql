@@ -38,10 +38,16 @@ INSERT INTO portfolio_details (portfolio_id, icon, text, detail_order) VALUES
 
 -- Add Midlands images
 INSERT INTO portfolio_images (portfolio_id, url, alt, address, image_order) VALUES
-('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972554/110_hillaries_sJHUDn_anrvh2.jpg', '110 Hillaries Road, Birmingham', '110 Hillaries Road, Birmingham, B23 7QT', 0),
-('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972553/1_booth_sJHUDn_jlke5x.jpg', '1 Booth Road, Wednesbury', '1 Booth Road, Wednesbury, WS10 0EN', 1),
-('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972566/68_stourbridge_sJHUDn_qvef0w.jpg', '68 Stourbridge Road, Dudley', '68 Stourbridge Road, Dudley, DY1 2DF', 2),
-('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056355/13_ksblfe.jpg', '42 Walford Street, Stoke-on-Trent', '42 Walford Street, Stoke-on-Trent, ST6 3HR', 3);
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056401/0_w1z5et.jpg', '98 Condover Road, Birmingham', '98 Condover Road, Birmingham, West Midlands, B31 3QX', 0),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056401/1_ziknpn.jpg', '89 Honiton Crescent, Birmingham', '89 Honiton Crescent, Birmingham, West Midlands, B31', 1),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/2_lf47ji.jpg', '197 Field Road, Bloxwich', '197 Field Road, Bloxwich, Walsall, West Midlands, WS3 3NA', 2),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/3_hdv15s.jpg', '106 Cheverton Road, Birmingham', '106 Cheverton Road, Birmingham, West Midlands, B31 1RT', 3),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056402/4_srljfn.jpg', '4 Rowland Gardens, Walsall', '4 Rowland Gardens, WALSALL, West Midlands, WS2 8UL', 4),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056403/5_b1udmb.jpg', '25 Lower Valley Road, Brierley Hill', '25 Lower Valley Road, Brierley Hill, West Midlands, DY5 3NP', 5),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056403/6_o6zvhg.jpg', '70 Rutherford Road, Walsall', '70 Rutherford Road, Beechdale, Walsall, West Midlands, WS2 7JQ', 6),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056404/7_tweooh.jpg', '210 Jiggins Lane, Birmingham', '210 Jiggins Lane, Birmingham, West Midlands, B32 3ER', 7),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056405/8_k79nsu.jpg', '16 Tipton Road, Dudley', '16 Tipton Road, DUDLEY, West Midlands, DY1 4SH', 8),
+('midlands-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056405/9_cbc41k.jpg', '11 Wills Avenue, West Bromwich', '11 Wills Avenue, West Bromwich, West Midlands, B71 2QS', 9);
 
 -- Add North West Portfolio
 INSERT INTO portfolios (portfolio_id, title, category, location, type, address, description, display_order, featured_image_order)
@@ -59,7 +65,12 @@ INSERT INTO portfolio_images (portfolio_id, url, alt, address, image_order) VALU
 ('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972574/5_bela_sJHUDn_ej77zi.jpg', '5 Bela Grove, Blackpool', '5 Bela Grove, Blackpool, FY1 5JZ', 1),
 ('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972559/16_sissons_sJHUDn_as8ryp.jpg', '16 Sissons Crescent, Leeds', '16 Sissons Crescent, Leeds, LS10 4LN', 2),
 ('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753972565/12_bright_sJHUDn_hqp51y.jpg', '12 Bright Street, Bradford', '12 Bright Street, Bradford, BD15 7QT', 3),
-('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056356/Liverpool-Property-_1_.jpg', '81 Grane Road, Liverpool', '81 Grane Road, Liverpool, BB4 4LR', 4);
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056356/Liverpool-Property-_1_.jpg', '81 Grane Road, Liverpool', '81 Grane Road, Liverpool, BB4 4LR', 4),
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753869658/DJI_20220721_160904_038_lvb2kk.jpg', 'North West Properties - Aerial View', 'North West Properties - Regional Overview', 5),
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753869661/IMG_2934_w4r7nn.jpg', 'North West Properties - Street View', 'North West Properties - Urban Development', 6),
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1753721219/20220810_133732_Original_2_lr7xen.jpg', 'North West Properties - Property View', 'North West Properties - Investment Opportunity', 7),
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056407/10_vusklp.jpg', 'North West Properties - Manchester Area', 'North West Properties - Manchester Region', 8),
+('north-west-portfolio-2025', 'https://res.cloudinary.com/dmns9ystn/image/upload/v1754056408/11_iwhdlp.jpg', 'North West Properties - Liverpool Area', 'North West Properties - Liverpool Region', 9);
 
 -- Verify all three portfolios were added
 SELECT p.portfolio_id, p.title, 
