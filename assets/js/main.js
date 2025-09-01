@@ -1,4 +1,9 @@
-/*=============== SHOW MENU ===============*/
+document.addEventListener("DOMContentLoaded", function() {
+  const path = window.location.pathname;
+  if (window.innerWidth <= 600 && !path.includes("mobile.html") && (path.endsWith("index.html") || path === "/" || path === "")) {
+    window.location.href = "mobile.html";
+  }
+});
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
