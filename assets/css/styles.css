@@ -274,12 +274,13 @@ button {
 }
 /* Size the custom image logo */
 .nav-logo {
-    height: 3.5rem; /* adjust this value smaller or larger as needed */
+    height: 2.5rem;   /* about 40px tall in the normal header */
     width: auto;
     display: block;
 }
+
 .header.scrolled .nav-logo {
-    height: 3rem; /* optional: smaller height when the header shrinks on scroll */
+    height: 2rem;     /* about 32px tall when the header shrinks */
 }
 
 
