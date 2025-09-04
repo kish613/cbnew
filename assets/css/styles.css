@@ -264,14 +264,24 @@ button {
   transition: all 0.3s ease;
   display: block;
 }
-
-.header.scrolled .nav {
-  height: 4rem;
+.header.scrolled .nav__logo-img {
+  height: 3rem;
 }
+
 
 .header.scrolled .nav__logo-img {
   height: 3rem;
 }
+/* Size the custom image logo */
+.nav-logo {
+    height: 3.5rem; /* adjust this value smaller or larger as needed */
+    width: auto;
+    display: block;
+}
+.header.scrolled .nav-logo {
+    height: 3rem; /* optional: smaller height when the header shrinks on scroll */
+}
+
 
 .nav__list {
   display: flex;
@@ -2923,7 +2933,6 @@ button {
 
 .footer__logo .logo-container:hover .logo-icon::after {
     background-color: #fff;
-}
 }
 
 .logo-container:hover .logo-text {
